@@ -75,66 +75,66 @@
               class="mchat-header-darklogotransparentstraightline-copy logo"
             />
           </header>
-          <h1 class="mchat-instructions-page-text">
-            <span>Instructions for Taking the</span>
-            <br class="h1" />
-            <span>M-CHAT-R™ autism test</span>
-          </h1>
-          <span class="mchat-instructions-page-text04">
-            The M-CHAT-R-F™️ is a developmental screening tool to assess the
-            risk of Autism Spectrum Disorder (ASD) for toddlers between the ages
-            of 16 and 30 months of age.Please answer these questions about your
-            child. Keep in mind how your child usually behaves. If you have seen
-            your child do the behavior a few times, but he or she does not
-            usually do it, then please answer no. Please circle yes or no for
-            every question. Thank you very much.
-          </span>
-          <h1 class="mchat-instructions-page-text05 h4">
-            <span>Privacy Policy</span>
-            <span class="mchat-instructions-page-text07">*</span>
-          </h1>
-          <div class="mchat-instructions-page-container2">
-            <input type="checkbox" checked="true" value="" required />
-            <span class="mchat-instructions-page-text08">
-              <span>I accept Bloom Buddy’s</span>
-              <a
-                href="https://thebloombuddy.com/privacy-policy.html"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="mchat-instructions-page-link"
-              >
-                Privacy Policy
-              </a>
-              <span class="mchat-instructions-page-text10">.</span>
+          <form method="" action ="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1 class="mchat-instructions-page-text">
+              <span>Instructions for Taking the</span>
+              <br class="h1" />
+              <span>M-CHAT-R™ autism test</span>
+            </h1>
+            <span class="mchat-instructions-page-text04">
+              The M-CHAT-R-F™️ is a developmental screening tool to assess the
+              risk of Autism Spectrum Disorder (ASD) for toddlers between the ages
+              of 16 and 30 months of age.Please answer these questions about your
+              child. Keep in mind how your child usually behaves. If you have seen
+              your child do the behavior a few times, but he or she does not
+              usually do it, then please answer no. Please circle yes or no for
+              every question. Thank you very much.
             </span>
-          </div>
-          <div class="mchat-instructions-page-container3">
-            <!-- <a href="index.html" class="mchat-instructions-page-navlink">
-              <div class="mchat-button-container">Previous</div>
-            </a> -->
-            {% comment %} <div class="mchat-button-container"> {% endcomment %}
-              
-                
-                  <a href="/mchat" class="mchat-button-navlink">
-                    <span>Previous</span>
-                  </a>
-                
-                {% comment %} <a
-                href="/registerPage"
-                class="mchat-instructions-page-navlink1"
-               > </a>               {% endcomment %}
-                <a href="/registerPage">
-                  <button class="mchat-button-navlink" type="submit">
-                    <span>Next</span>
-                  </button>
+            <h1 class="mchat-instructions-page-text05 h4">
+              <span>Privacy Policy</span>
+              <span class="mchat-instructions-page-text07">*</span>
+            </h1>
+            <div class="mchat-instructions-page-container2">
+              <input type="checkbox" checked="true" value="" required />
+              <span class="mchat-instructions-page-text08">
+                <span>I accept Bloom Buddy’s</span>
+                <a
+                  href="https://thebloombuddy.com/privacy-policy.html"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="mchat-instructions-page-link"
+                >
+                  Privacy Policy
                 </a>
-              
+                <span class="mchat-instructions-page-text10">.</span>
+              </span>
             </div>
-            
-          </div>
-
-           
+            <div class="mchat-instructions-page-container3">
+              <!-- <a href="index.html" class="mchat-instructions-page-navlink">
+                <div class="mchat-button-container">Previous</div>
+              </a> -->
+              {% comment %} <div class="mchat-button-container"> {% endcomment %}
+                
+                  
+                    <a href="/mchat" class="mchat-button-navlink">
+                      <span>Previous</span>
+                    </a>
+                  
+                  {% comment %} <a
+                  href="/registerPage"
+                  class="mchat-instructions-page-navlink1"
+                > </a>               {% endcomment %}
+                  <a href="/registerPage">
+                    <button class="mchat-button-navlink" type="submit">
+                      <span>Next</span>
+                    </button>
+                  </a>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
       </div>
       <span class="#">
         © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton

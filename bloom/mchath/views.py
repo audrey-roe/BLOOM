@@ -22,10 +22,9 @@ from django.http import HttpResponse
 #     return render(request, 'signinfo.html', context)
 def registerPage(request):
     if request.method == 'POST':     
-        # if customer.objects.filter(caregiver_email = request.POST.get['caregiver_email']).exists():
         if customer.objects.filter(caregiver_email='caregiver_email').exists():
             return redirect (quizz)
-        # else:
+        else:
             customer.objects.create(
                     caregiver_name = request.POST['caregiver_name'],
                     child_age = request.POST['child_age'].replace(' Months',''),
@@ -35,6 +34,8 @@ def registerPage(request):
                     date = request.POST['date'],)
 
         return redirect(quizz)
+    else:
+        return render (request, 'info-form-page.html')
     # return redirect(quizz)
 
 def mchat(request):
