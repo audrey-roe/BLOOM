@@ -76,7 +76,7 @@
               class="mchat-header-darklogotransparentstraightline-copy logo"
             />
           </header>
-          <form method="POST" action ="/registerPage/" enctype="multipart/form-data">
+          <form method="POST" action ="/registerPage" enctype="multipart/form-data">
             {% csrf_token %}
             <h1 class="h3">Please, tell us a bit about yourself</h1>
               <div class="info-form-page-container02">
@@ -192,11 +192,13 @@
                   </a>
                 </div>
                 <div class="mchat-button-container">
-                  <a
-                    href="/quizz"
-                    class="mchat-button-navlink"
-                  >
-                    <span>Next</span>
+                  <a href="/quizz">
+                    <button
+                      class="mchat-button-navlink"
+                      type="submit"
+                    >
+                      <span>Next</span>
+                    </button>
                   </a>
                 </div>
               </div>

@@ -4,12 +4,12 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class customer(models.Model):
-    caregiver_name = models.CharField(max_length= 200)
-    child_age = models.PositiveIntegerField()
-    child_name = models.CharField(max_length= 200)
-    relation_to_child = models.CharField(max_length= 200)
-    caregiver_email = models.EmailField( max_length=50)
-    caregiver_phone = models.BigIntegerField()
+    caregiver_name = models.CharField(max_length= 200, null=False, blank=False)
+    child_age = models.PositiveIntegerField(null=False, blank=False)
+    child_name = models.CharField(max_length= 200, null=False, blank=False)
+    relation_to_child = models.CharField(max_length= 200, null=False, blank=False)
+    caregiver_email = models.EmailField(max_length=50, null=False, blank=False)
+    caregiver_phone = models.BigIntegerField( null=False, blank=False)
     date = models.DateField(auto_now_add=True, null=True)
     score = models.IntegerField()
     USERNAME_FIELD = 'username'

@@ -94,7 +94,7 @@
             <span class="mchat-instructions-page-text07">*</span>
           </h1>
           <div class="mchat-instructions-page-container2">
-            <input type="checkbox" checked="true" />
+            <input type="checkbox" checked="true" required />
             <span class="mchat-instructions-page-text08">
               <span>I accept Bloom Buddy’s</span>
               <a
@@ -119,14 +119,15 @@
                     <span>Previous</span>
                   </a>
                 
-                <a
+                {% comment %} <a
                 href="/registerPage"
                 class="mchat-instructions-page-navlink1"
-               > </a>              
-                
-                  <a href="/registerPage" class="mchat-button-navlink">
+               > </a>               {% endcomment %}
+                <a href="/registerPage">
+                  <button class="mchat-button-navlink" type="submit">
                     <span>Next</span>
-                  </a>
+                  </button>
+                </a>
               
             </div>
             
