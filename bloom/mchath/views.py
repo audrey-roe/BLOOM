@@ -34,13 +34,13 @@ def registerPage(request):
 
     # return redirect(quizz)
     else:
-        return render(request, 'info-from-page.html')
+        return render(request, 'info-form-page.html')
 
 def mchat(request):
     return render(request, 'mchat-intro-page.html')
 
 def instruction(request):
-    return render(request, 'mchat-instruction-page.html')
+    return render(request, 'mchat-instructions-page.html')
 
 def quizz(request):
     if request.POST:
