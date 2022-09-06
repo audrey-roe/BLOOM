@@ -43,7 +43,7 @@
       data-tag="font"
     />
 
-    <link rel="stylesheet" href="./static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
   </head>
   <body>
     <div>
@@ -112,20 +112,24 @@
             <!-- <a href="index.html" class="mchat-instructions-page-navlink">
               <div class="mchat-button-container">Previous</div>
             </a> -->
-            <div class="mchat-button-container">
-              <a
+            {% comment %} <div class="mchat-button-container"> {% endcomment %}
+              
+                
+                  <a href="/mchat" class="mchat-button-navlink">
+                    <span>Previous</span>
+                  </a>
+                
+                <a
                 href="/registerPage"
                 class="mchat-instructions-page-navlink1"
-              >
-              <a href="/mchat" class="mchat-button-navlink">
-                <span>Previous</span>
-              </a>
+               > </a>              
+                
+                  <a href="/registerPage" class="mchat-button-navlink">
+                    <span>Next</span>
+                  </a>
+              
             </div>
-            <div>
-              <a href="/registerPage" class="mchat-button-navlink">
-                <span>Next</span>
-              </a>
-            </div>
+            
           </div>
 
            
