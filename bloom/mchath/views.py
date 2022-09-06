@@ -6,6 +6,8 @@ from django.core.paginator import Paginator
 # from .forms import createcustomerform, quizform
 from .models import quiz, customer
 from django.http import HttpResponse
+from django.core.paginator import Paginator , EmptyPage, PageNotAnInteger
+
 
 # Create your views here.
 
@@ -50,7 +52,7 @@ def quizz(request):
         questions=quiz.objects.all()
         score = 0
         # wrong=0
-        # correct=0
+        correct=0
         total=0
         for q in questions:
             total+=1
@@ -59,18 +61,35 @@ def quizz(request):
             print()
             if q.ans ==  request.POST.get(q.question):
                 score+=1
-            #     correct+=1
+                correct+=1
             # else:
             #     wrong+=1
         context = {
-            # 'total':total,
+            'total':total,
             'score': score
         }
         return render(request, 'mchat-results-page.html', context)
     else:
         questions=quiz.objects.all()
-        context = {
-            'questions':questions
+
+        p = Paginator(questions, 4) # 4 questions per page this determines how many objects will be displayed per page
+        page_num = request.GET.get('page', 1) # allows you to access pages by passing value directly  through link
+        page = p.page(page_num)
+
+        try:
+            page = p.page(page_num)
+        except PageNotAnInteger:
+            # if page is not an integer, deliver the first page
+            page = Paginator.page(1)
+        except EmptyPage:
+            # if the page is out of range, deliver the last page
+            page = p.page(1)
+        
+        
+        context = { 
+            'questions':page 
+        
+            # 'questions':questions
         }
     
     return render(request, 'mchat-survey-page.html', context)

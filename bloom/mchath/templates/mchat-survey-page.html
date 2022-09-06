@@ -75,36 +75,59 @@
               class="mchat-header-darklogotransparentstraightline-copy logo"
             />
           </header>
-          <form action=""
-          <div class="mchat-survey-page-container002">
+          
+
+            <div class="mchat-survey-page-container002">
             <div class="mchat-survey-page-container003">
-              <span class="mchat-survey-page-text">
-                1. 
-                {% comment %} Does your child enjoy being swung, bounced on your knee, etc.? {% endcomment %}
-              </span>
-              <div class="mchat-survey-page-container004">
-                <div class="selector">
-                  <input type="radio" id="1y" name="q1" value="yes" />
-                  <label for="1y" class="mchat-survey-page-text01">Yes</label>
+              <form method="POST" action ="/quizz/" enctype="multipart/form-data">
+                {% csrf_token %}
+                {%for q in questions %}
+                <div class="questions">
+                  <span class="mchat-survey-page-text">
+                    {{q.question}}
+                    {% comment %} 1. Does your child enjoy being swung, bounced on your knee, etc.? {% endcomment %}
+                  </span>
+                  <div class="mchat-survey-page-container004">
+                    <div class="selector">
+                      <input type="radio" id="" name="{{q.question}}" value="op1" />
+                      <label for="" class="mchat-survey-page-text01">
+                      {{q.op1}}
+                      {% comment %} Yes {% endcomment %}
+                      </label>
+                    </div>
+                    <div class="selector">
+                      <input type="radio" id="" name="{{q.question}}" value="op2" />
+                      <label for="" class="mchat-survey-page-text02">
+                        {{q.op2}}
+                        {% comment %} No {% endcomment %}
+                      </label>
+                    </div>
+                  </div>
+                  {% endfor %}
                 </div>
-                <div class="selector">
-                  <input type="radio" id="1n" name="q1" value="no" />
-                  <label for="1n" class="mchat-survey-page-text02">No</label>
-                </div>
-              </div>
+              </form>
             </div>
-            <div class="mchat-survey-page-container007">
+            
+            {% comment %} <div class="mchat-survey-page-container007">
               <span class="mchat-survey-page-text03">
+                {{q.question}}
                 2. Does your child take an interest in other children?
               </span>
               <div class="mchat-survey-page-container008">
                 <div class="selector">
                   <input type="radio" id="2y" for="q2" name="q2" value="yes" />
-                  <label for="2y" class="mchat-survey-page-text04">Yes</label>
+                  <label for="2y" class="mchat-survey-page-text04">
+                    {{q.op1}}
+                    Yes
+                  </label>
                 </div>
                 <div class="selector">
                   <input type="radio" id="2n" for="q2" name="q2" value="no" />
-                  <label for="2n" class="mchat-survey-page-text05">No</label>
+                  <label for="2n" class="mchat-survey-page-text05">
+                    {{q.op2}}
+
+                    No
+                  </label>
                 </div>
               </div>
             </div>
@@ -652,7 +675,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
           <div class="mchat-survey-page-container110">
             <div class="mchat-button-container">
               <a href="#survey-slide-5" class="mchat-button-navlink">

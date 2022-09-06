@@ -1118,3 +1118,7 @@
 .active {
   display: flex;
 }
+
+.questions{
+  margin-top: 25px;
+}
