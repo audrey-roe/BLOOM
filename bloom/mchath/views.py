@@ -23,16 +23,18 @@ from django.http import HttpResponse
 def registerPage(request):
     if request.method == 'POST':     
         # if customer.objects.filter(caregiver_email = request.POST.get['caregiver_email']).exists():
-            # return redirect (quizz)
+        if customer.objects.filter(caregiver_email='caregiver_email').exists():
+            return redirect (quizz)
+        # else:
             customer.objects.create(
                     caregiver_name = request.POST['caregiver_name'],
                     child_age = request.POST['child_age'].replace(' Months',''),
                     child_name = request.POST['child_name'],
                     caregiver_email = request.POST['caregiver_email'],
                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
-                    date = request.POST['date'],) 
-    else:
-        return render(request, 'info-form-page.html')
+                    date = request.POST['date'],)
+
+        return redirect(quizz)
     # return redirect(quizz)
 
 def mchat(request):

@@ -11,7 +11,7 @@ class customer(models.Model):
     caregiver_email = models.EmailField(max_length=50, null=False, blank=False)
     caregiver_phone = models.BigIntegerField( null=False, blank=False)
     date = models.DateField(auto_now_add=True, null=True)
-    score = models.IntegerField()
+    score = models.IntegerField(null=True)
     USERNAME_FIELD = 'username'
 
 
