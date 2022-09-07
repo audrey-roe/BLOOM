@@ -49,8 +49,6 @@ def instruction(request):
     return render(request, 'mchat-instructions-page.html')
 
 def quizz(request):
-    persons = quiz.objects.all()
-    tot = persons.count()
 
     if not request.method == 'POST':
         if 'search-persons-post' in request.session:
