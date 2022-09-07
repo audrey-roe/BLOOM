@@ -49,7 +49,16 @@ def instruction(request):
     return render(request, 'mchat-instructions-page.html')
 
 def quizz(request):
+    persons = quiz.objects.all()
+    tot = persons.count()
+
+    if not request.method == 'POST':
+        if 'search-persons-post' in request.session:
+            request.POST = request.session['search-persons-post']
+            request.method = 'POST'
     if request.method == 'POST':
+        request.session['search-persons-post'] = request.POST
+
         print(request.POST)
         questions=quiz.objects.all()
         score = 0

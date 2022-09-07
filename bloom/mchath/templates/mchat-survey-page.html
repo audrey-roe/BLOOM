@@ -76,676 +76,686 @@
             />
           </header>
           
-
-            <div class="mchat-survey-page-container002">
-            <div class="mchat-survey-page-container003">
-              <form method="POST" action ="/quizz/" enctype="multipart/form-data">
-                {% csrf_token %}
-                {%for q in questions %}
-                <div class="questions">
-                  <span class="mchat-survey-page-text">
-                    {{q.question}}
-                    {% comment %} 1. Does your child enjoy being swung, bounced on your knee, etc.? {% endcomment %}
-                  </span>
-                  <div class="mchat-survey-page-container004">
-                    <div class="selector">
-                      <input type="radio" id="" name="{{q.question}}" value="op1" />
-                      <label for="" class="mchat-survey-page-text01">
-                      {{q.Op1}}
-                      {% comment %} Yes {% endcomment %}
-                      </label>
+            <div class="mchat-survey-page-container002 infinite-container">
+              <div class="mchat-survey-page-container003">
+                  <form method="POST" action ="/quizz/" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {%for q in questions %}
+                        <div class="questions infinite-item">
+                          <span class="mchat-survey-page-text">
+                            {{q.question}}
+                            {% comment %} 1. Does your child enjoy being swung, bounced on your knee, etc.? {% endcomment %}
+                          </span>
+                          <div class="mchat-survey-page-container004">
+                            <div class="selector infinite-item">
+                              <input type="radio" id="" name="{{q.question}}" value="op1" />
+                              <label for="" class="mchat-survey-page-text01">
+                              {{q.Op1}}
+                              {% comment %} Yes {% endcomment %}
+                              </label>
+                            </div>
+                            <div class="selector">
+                              <input type="radio" id="" name="{{q.question}}" value="op2" />
+                              <label for="" class="mchat-survey-page-text02">
+                                {{q.Op2}}
+                                {% comment %} No {% endcomment %}
+                              </label>
+                            </div>
+                          </div>
+                          {% endfor %}
+                        
+                        </div>
+                  
                     </div>
-                    <div class="selector">
-                      <input type="radio" id="" name="{{q.question}}" value="op2" />
-                      <label for="" class="mchat-survey-page-text02">
-                        {{q.Op2}}
-                        {% comment %} No {% endcomment %}
-                      </label>
+                    
+                    {% comment %} <div class="mchat-survey-page-container007">
+                      <span class="mchat-survey-page-text03">
+                        {{q.question}}
+                        2. Does your child take an interest in other children?
+                      </span>
+                      <div class="mchat-survey-page-container008">
+                        <div class="selector">
+                          <input type="radio" id="2y" for="q2" name="q2" value="yes" />
+                          <label for="2y" class="mchat-survey-page-text04">
+                            {{q.op1}}
+                            Yes
+                          </label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="2n" for="q2" name="q2" value="no" />
+                          <label for="2n" class="mchat-survey-page-text05">
+                            {{q.op2}}
+
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container011">
+                      <span class="mchat-survey-page-text06">
+                        3. Does your child like climbing on things such as up stairs?
+                      </span>
+                      <div class="mchat-survey-page-container012">
+                        <div class="selector">
+                          <input type="radio" id="3y" name="q3" value="yes" />
+                          <label for="3y" class="mchat-survey-page-text07">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="3n" name="q3" value="no" />
+                          <label for="3n" class="mchat-survey-page-text08">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container015">
+                      <span class="mchat-survey-page-text09">
+                        4. Does your child enjoy playing peek-a-boo/hide-and-seek?
+                      </span>
+                      <div class="mchat-survey-page-container016">
+                        <div class="selector">
+                          <input type="radio" id="4y" name="q4" value="yes" />
+                          <label for="4y" class="mchat-survey-page-text10">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="4n" name="q4" value="no" />
+                          <label for="4n" class="mchat-survey-page-text11">No</label>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  {% endfor %}
+                  <div class="mchat-survey-page-container019">
+                    <a href="info-form-page.html" class="mchat-survey-page-navlink">
+                      <div class="mchat-button-container">
+                        <a  href= "/registerPage">
+                          <button class="mchat-button-navlink" type="submit">
+                          <span>Previous</span>
+                          </button>
+                        </a>
+                      </div>
+                    </a>
+                    <div class="mchat-button-container">
+                      <a href="#survey-slide-2" class="mchat-button-navlink" onclick="myFunction()">
+                        <span>Next</span>
+                      </a>
+                    </div>
+                  </div>
+                  <span class="mchat-survey-page-text12">
+                    © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
+                  </span>
                 </div>
-              </form>
-            </div>
-            
-            {% comment %} <div class="mchat-survey-page-container007">
-              <span class="mchat-survey-page-text03">
-                {{q.question}}
-                2. Does your child take an interest in other children?
-              </span>
-              <div class="mchat-survey-page-container008">
-                <div class="selector">
-                  <input type="radio" id="2y" for="q2" name="q2" value="yes" />
-                  <label for="2y" class="mchat-survey-page-text04">
-                    {{q.op1}}
-                    Yes
-                  </label>
+                <div id="survey-slide-2" class="mchat-survey-page-container039 step">
+                  <div class="mchat-page-numbers-container">
+                    <span class="mchat-page-numbers-text"><span>Page 6 of 9</span></span>
+                  </div>
+                  <header
+                    class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name11"
+                  >
+                    <a
+                      href="https://thebloombuddy.com"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      class="mchat-header-link"
+                    >
+                      <span>< RETURN HOME</span>
+                    </a>
+                    <img
+                      id="bloombuddy-logo"
+                      alt="darklogotransparentstraightlineCopy3573"
+                      src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png"
+                      loading="eager"
+                      class="mchat-header-darklogotransparentstraightline-copy logo"
+                    />
+                  </header>
+                  <div class="mchat-survey-page-container040">
+                    <div class="mchat-survey-page-container041">
+                      <span class="mchat-survey-page-text26">
+                        5. Does your child ever pretend, for example, to talk on the phone
+                        or take care of a doll or pretend other things?
+                      </span>
+                      <div class="mchat-survey-page-container042">
+                        <div class="selector">
+                          <input type="radio" id="5y" name="q5" value="yes" />
+                          <label for="5y" class="mchat-survey-page-text27">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="5n" name="q5" value="no" />
+                          <label for="5n" class="mchat-survey-page-text28">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container045">
+                      <span class="mchat-survey-page-text29">
+                        6. Does your child ever use his/her index finger to point, to ask
+                        for something?
+                      </span>
+                      <div class="mchat-survey-page-container046">
+                        <div class="selector">
+                          <input type="radio" id="6y" name="q6" value="yes" />
+                          <label for="6y" class="mchat-survey-page-text30">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="6n" for="q5" name="q6" value="no" />
+                          <label for="6n" class="mchat-survey-page-text31">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container049">
+                      <span class="mchat-survey-page-text32">
+                        7. Does your child ever use his/her index finger to point, to
+                        indicate interest in something?
+                      </span>
+                      <div class="mchat-survey-page-container050">
+                        <div class="selector">
+                          <input type="radio" id="7y" name="q7" value="yes" />
+                          <label for="7y" class="mchat-survey-page-text33">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="7n" name="q7" value="no" />
+                          <label for="7n" class="mchat-survey-page-text34">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container053">
+                      <span class="mchat-survey-page-text35">
+                        8. Can your child play properly with small toys (eg. cars or blocks)
+                        without just mouthing, fiddling or dropping them?
+                      </span>
+                      <div class="mchat-survey-page-container054">
+                        <div class="selector">
+                          <input type="radio" id="8y" name="q8" value="yes" />
+                          <label for="8y" class="mchat-survey-page-text36">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="8n" name="q8" value="no" />
+                          <label for="8n" class="mchat-survey-page-text37">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mchat-survey-page-container057">
+                    <div class="mchat-button-container">
+                      <a href="#survey-slide-1" class="mchat-button-navlink">
+                        <span>Previous</span>
+                      </a>
+                    </div>
+                    <div class="mchat-button-container">
+                      <a href="#survey-slide-3" class="mchat-button-navlink">
+                        <span>Next</span>
+                      </a>
+                    </div>
+                  </div>
+                  <span class="mchat-survey-page-text38">
+                    © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
+                  </span>
                 </div>
-                <div class="selector">
-                  <input type="radio" id="2n" for="q2" name="q2" value="no" />
-                  <label for="2n" class="mchat-survey-page-text05">
-                    {{q.op2}}
-
-                    No
-                  </label>
+                <div id="survey-slide-3" class="mchat-survey-page-container020 step">
+                  <div class="mchat-page-numbers-container">
+                    <span class="mchat-page-numbers-text"><span>Page 5 of 9</span></span>
+                  </div>
+                  <header
+                    class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name10"
+                  >
+                    <a
+                      href="https://thebloombuddy.com"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      class="mchat-header-link"
+                    >
+                      <span>< RETURN HOME</span>
+                    </a>
+                    <img
+                      id="bloombuddy-logo"
+                      alt="darklogotransparentstraightlineCopy3573"
+                      src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png"
+                      loading="eager"
+                      class="mchat-header-darklogotransparentstraightline-copy logo"
+                    />
+                  </header>
+                  <div class="mchat-survey-page-container021">
+                    <div class="mchat-survey-page-container022">
+                      <span class="mchat-survey-page-text13">
+                        9. Does your child ever bring objects over to you (parent) to show
+                        you something?
+                      </span>
+                      <div class="mchat-survey-page-container023">
+                        <div class="selector">
+                          <input type="radio" id="9y" name="q9" value="yes" />
+                          <label for="9y" class="mchat-survey-page-text14">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="9n" name="q9" value="no" />
+                          <label for="9n" class="mchat-survey-page-text15">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container026">
+                      <span class="mchat-survey-page-text16">
+                        10. Does your child look you in the eye for more than a second or
+                        two?
+                      </span>
+                      <div class="mchat-survey-page-container027">
+                        <div class="selector">
+                          <input type="radio" id="10y" name="q10" value="yes" />
+                          <label for="bloombuddy-logo" class="mchat-survey-page-text17">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="10n" name="q10" value="no" />
+                          <label for="no" class="mchat-survey-page-text18">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container030">
+                      <span class="mchat-survey-page-text19">
+                        11. Does your child ever seem oversensitive to noise? (eg. plugging
+                        ears)
+                      </span>
+                      <div class="mchat-survey-page-container031">
+                        <div class="selector">
+                          <input type="radio" id="11y" for="q11" name="q11" value="yes" />
+                          <label for="11y" class="mchat-survey-page-text20">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="11n" name="q11" value="no" />
+                          <label for="no" class="mchat-survey-page-text21">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container034">
+                      <span class="mchat-survey-page-text22">
+                        12. Does your child smile in response to your face or your smile?
+                      </span>
+                      <div class="mchat-survey-page-container035">
+                        <div class="selector">
+                          <input type="radio" id="12y" name="q12" value="yes" />
+                          <label for="12y" class="mchat-survey-page-text23">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input
+                            type="radio"
+                            id="12n"
+                            for="q12"
+                            name="question-1"
+                            value="no"
+                          />
+                          <label for="12n" class="mchat-survey-page-text24">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mchat-survey-page-container038">
+                    <div class="mchat-button-container">
+                      <a href="#survey-slide-2" class="mchat-button-navlink">
+                        <span>Previous</span>
+                      </a>
+                    </div>
+                    <div class="mchat-button-container">
+                      <a href="#survey-slide-4" class="mchat-button-navlink">
+                        <span>Next</span>
+                      </a>
+                    </div>
+                  </div>
+                  <span class="mchat-survey-page-text25">
+                    © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
+                  </span>
+                </div>
+                <div id="survey-slide-4" class="mchat-survey-page-container058 step">
+                  <div class="mchat-page-numbers-container">
+                    <span class="mchat-page-numbers-text"><span>Page 7 of 9</span></span>
+                  </div>
+                  <header
+                    class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name12"
+                  >
+                    <a
+                      href="https://thebloombuddy.com"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      class="mchat-header-link"
+                    >
+                      <span>< RETURN HOME</span>
+                    </a>
+                    <img
+                      id="bloombuddy-logo"
+                      alt="darklogotransparentstraightlineCopy3573"
+                      src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png"
+                      loading="eager"
+                      class="mchat-header-darklogotransparentstraightline-copy logo"
+                    />
+                  </header>
+                  <div class="mchat-survey-page-container059">
+                    <div class="mchat-survey-page-container060">
+                      <span class="mchat-survey-page-text39">
+                        13. Does your child imitate you? (e.g., you make a face, will your
+                        child imitate you?
+                      </span>
+                      <div class="mchat-survey-page-container061">
+                        <div class="selector">
+                          <input type="radio" id="13y" name="q13" value="yes" />
+                          <label for="13y" class="mchat-survey-page-text40">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="13n" for="q13" name="q13" value="no" />
+                          <label for="13n" class="mchat-survey-page-text41">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container064">
+                      <span class="mchat-survey-page-text42">
+                        14. Does your child respond to his/her name when you call?
+                      </span>
+                      <div class="mchat-survey-page-container065">
+                        <div class="selector">
+                          <input type="radio" id="14y" name="q14" value="yes" />
+                          <label for="yes" class="mchat-survey-page-text43">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="14n" name="q14" value="no" />
+                          <label for="no" class="mchat-survey-page-text44">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container068">
+                      <span class="mchat-survey-page-text45">
+                        15. If you point at a toy across the room, will your child look at
+                        it?
+                      </span>
+                      <div class="mchat-survey-page-container069">
+                        <div class="selector">
+                          <input type="radio" id="15y" name="q15" value="yes" />
+                          <label for="15y" class="mchat-survey-page-text46">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="15n" name="q15" value="no" />
+                          <label for="no" class="mchat-survey-page-text47">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container072">
+                      <span class="mchat-survey-page-text48">
+                        16. Does your child walk?
+                      </span>
+                      <div class="mchat-survey-page-container073">
+                        <div class="selector">
+                          <input type="radio" id="16y" for="q16" name="q16" value="yes" />
+                          <label for="16y" class="mchat-survey-page-text49">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="16n" name="q16" value="no" />
+                          <label for="16n" class="mchat-survey-page-text50">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mchat-survey-page-container076">
+                    <div class="mchat-button-container">
+                      <a href="#survey-slide-3" class="mchat-button-navlink">
+                        <span>Previous</span>
+                      </a>
+                    </div>
+                    <div class="mchat-button-container">
+                      <a href="#survey-slide-5" class="mchat-button-navlink">
+                        <span>Next</span>
+                      </a>
+                    </div>
+                  </div>
+                  <span class="mchat-survey-page-text51">
+                    © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
+                  </span>
+                </div>
+                <div id="survey-slide-5" class="mchat-survey-page-container077 step">
+                  <div class="mchat-page-numbers-container">
+                    <span class="mchat-page-numbers-text"><span>Page 8 of 9</span></span>
+                  </div>
+                  <header
+                    class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name13"
+                  >
+                    <a
+                      href="https://thebloombuddy.com"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      class="mchat-header-link"
+                    >
+                      <span>< RETURN HOME</span>
+                    </a>
+                    <img
+                      id="bloombuddy-logo"
+                      alt="darklogotransparentstraightlineCopy3573"
+                      src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png"
+                      loading="eager"
+                      class="mchat-header-darklogotransparentstraightline-copy logo"
+                    />
+                  </header>
+                  <div class="mchat-survey-page-container078">
+                    <div class="mchat-survey-page-container079">
+                      <span class="mchat-survey-page-text52">
+                        17. Does your child look at things you are looking at?
+                      </span>
+                      <div class="mchat-survey-page-container080">
+                        <div class="selector">
+                          <input type="radio" id="17y" name="q17" value="yes" />
+                          <label for="17y" class="mchat-survey-page-text53">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="17n" for="q17" name="q17" value="no" />
+                          <label for="17n" class="mchat-survey-page-text54">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container083">
+                      <span class="mchat-survey-page-text55">
+                        18. Does your child make unusual finger movements near his/her face?
+                      </span>
+                      <div class="mchat-survey-page-container084">
+                        <div class="selector">
+                          <input type="radio" id="18y" name="q18" value="yes" />
+                          <label for="18y" class="mchat-survey-page-text56">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="18n" name="q18" value="no" />
+                          <label for="no" class="mchat-survey-page-text57">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container087">
+                      <span class="mchat-survey-page-text58">
+                        19. Does your child try to attract your attention to his/her own
+                        activity?
+                      </span>
+                      <div class="mchat-survey-page-container088">
+                        <div class="selector">
+                          <input type="radio" id="19y" name="q19" value="yes" />
+                          <label for="19y" class="mchat-survey-page-text59">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="19n" name="q19" value="no" />
+                          <label for="19n" class="mchat-survey-page-text60">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container091">
+                      <span class="mchat-survey-page-text61">
+                        20. Have you ever wondered if your child is deaf?
+                      </span>
+                      <div class="mchat-survey-page-container092">
+                        <div class="selector">
+                          <input type="radio" id="20y" for="q16" name="q20" value="yes" />
+                          <label for="16y" class="mchat-survey-page-text62">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="20n" name="q20" value="no" />
+                          <label for="16n" class="mchat-survey-page-text63">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mchat-survey-page-container095">
+                    <div class="mchat-button-container">
+                      <a href="#survey-slide-4" class="mchat-button-navlink">
+                        <span>Previous</span>
+                      </a>
+                    </div>
+                    <div class="mchat-button-container">
+                      <a href="#survey-slide-6" class="mchat-button-navlink">
+                        <span>Next</span>
+                      </a>
+                    </div>
+                  </div>
+                  <span class="mchat-survey-page-text64">
+                    © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
+                  </span>
+                </div>
+                <div id="survey-slide-6" class="mchat-survey-page-container096 step">
+                  <div class="mchat-page-numbers-container">
+                    <span class="mchat-page-numbers-text"><span>Page 9 of 9</span></span>
+                  </div>
+                  <header
+                    class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name14"
+                  >
+                    <a
+                      href="https://thebloombuddy.com"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      class="mchat-header-link"
+                    >
+                      <span>< RETURN HOME</span>
+                    </a>
+                    <img
+                      id="bloombuddy-logo"
+                      alt="darklogotransparentstraightlineCopy3573"
+                      src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png"
+                      loading="eager"
+                      class="mchat-header-darklogotransparentstraightline-copy logo"
+                    />
+                  </header>
+                  <div class="mchat-survey-page-container097">
+                    <div class="mchat-survey-page-container098">
+                      <span class="mchat-survey-page-text65">
+                        21. Does your child understand what people say?
+                      </span>
+                      <div class="mchat-survey-page-container099">
+                        <div class="selector">
+                          <input type="radio" id="17y" name="q17" value="yes" />
+                          <label for="17y" class="mchat-survey-page-text66">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="17n" for="q17" name="q17" value="no" />
+                          <label for="17n" class="mchat-survey-page-text67">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container102">
+                      <span class="mchat-survey-page-text68">
+                        22. Does your child sometimes stare at nothing or wander with no
+                        purpose?
+                      </span>
+                      <div class="mchat-survey-page-container103">
+                        <div class="selector">
+                          <input type="radio" id="18y" name="q18" value="yes" />
+                          <label for="18y" class="mchat-survey-page-text69">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="18n" name="q18" value="no" />
+                          <label for="no" class="mchat-survey-page-text70">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mchat-survey-page-container106">
+                      <span class="mchat-survey-page-text71">
+                        23. Does your child look at your face to check your reaction when
+                        faced with something unfamiliar?
+                      </span>
+                      <div class="mchat-survey-page-container107">
+                        <div class="selector">
+                          <input type="radio" id="19y" name="q19" value="yes" />
+                          <label for="19y" class="mchat-survey-page-text72">Yes</label>
+                        </div>
+                        <div class="selector">
+                          <input type="radio" id="19n" name="q19" value="no" />
+                          <label for="19n" class="mchat-survey-page-text73">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div> {% endcomment %}
+                
+                
                 </div>
               </div>
             </div>
-            <div class="mchat-survey-page-container011">
-              <span class="mchat-survey-page-text06">
-                3. Does your child like climbing on things such as up stairs?
-              </span>
-              <div class="mchat-survey-page-container012">
-                <div class="selector">
-                  <input type="radio" id="3y" name="q3" value="yes" />
-                  <label for="3y" class="mchat-survey-page-text07">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="3n" name="q3" value="no" />
-                  <label for="3n" class="mchat-survey-page-text08">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container015">
-              <span class="mchat-survey-page-text09">
-                4. Does your child enjoy playing peek-a-boo/hide-and-seek?
-              </span>
-              <div class="mchat-survey-page-container016">
-                <div class="selector">
-                  <input type="radio" id="4y" name="q4" value="yes" />
-                  <label for="4y" class="mchat-survey-page-text10">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="4n" name="q4" value="no" />
-                  <label for="4n" class="mchat-survey-page-text11">No</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mchat-survey-page-container019">
-            <a href="info-form-page.html" class="mchat-survey-page-navlink">
+          
+            <div class="mchat-survey-page-container110" >
               <div class="mchat-button-container">
-                <a  href= "/registerPage">
-                  <button class="mchat-button-navlink" type="submit">
+                {%if questions.has_previous%}
+                <a href="?page={{questions.previous_page_number}}" class="mchat-button-navlink">
                   <span>Previous</span>
-                  </button>
                 </a>
+                {% endif %}
               </div>
-            </a>
-            <div class="mchat-button-container">
-              <a href="#survey-slide-2" class="mchat-button-navlink" onclick="myFunction()">
-                <span>Next</span>
-              </a>
-            </div>
-          </div>
-          <span class="mchat-survey-page-text12">
-            © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
-          </span>
-        </div>
-        <div id="survey-slide-2" class="mchat-survey-page-container039 step">
-          <div class="mchat-page-numbers-container">
-            <span class="mchat-page-numbers-text"><span>Page 6 of 9</span></span>
-          </div>
-          <header
-            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name11"
-          >
-            <a
-              href="https://thebloombuddy.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="mchat-header-link"
-            >
-              <span>< RETURN HOME</span>
-            </a>
-            <img
-              id="bloombuddy-logo"
-              alt="darklogotransparentstraightlineCopy3573"
-              src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png"
-              loading="eager"
-              class="mchat-header-darklogotransparentstraightline-copy logo"
-            />
-          </header>
-          <div class="mchat-survey-page-container040">
-            <div class="mchat-survey-page-container041">
-              <span class="mchat-survey-page-text26">
-                5. Does your child ever pretend, for example, to talk on the phone
-                or take care of a doll or pretend other things?
-              </span>
-              <div class="mchat-survey-page-container042">
-                <div class="selector">
-                  <input type="radio" id="5y" name="q5" value="yes" />
-                  <label for="5y" class="mchat-survey-page-text27">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="5n" name="q5" value="no" />
-                  <label for="5n" class="mchat-survey-page-text28">No</label>
-                </div>
+              <div class="mchat-button-container">
+                {%if questions.has_next%}
+                <a href="?page={{questions.next_page_number}}" class="mchat-button-navlink">
+                  <span>Next</span>
+                </a>
+                {%endif%}
               </div>
+              <a >
+                <button class="mchat-button-navlink"
+                {% if questions.has_next %} 
+                disabled="disabled"
+                style='display:none'
+                
+                {% else %}
+                name="page"
+                value=inputs.{{q.question}}
+                type="submit"
+                {% endif %}>
+                Submit
+                </button>
             </div>
-            <div class="mchat-survey-page-container045">
-              <span class="mchat-survey-page-text29">
-                6. Does your child ever use his/her index finger to point, to ask
-                for something?
-              </span>
-              <div class="mchat-survey-page-container046">
-                <div class="selector">
-                  <input type="radio" id="6y" name="q6" value="yes" />
-                  <label for="6y" class="mchat-survey-page-text30">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="6n" for="q5" name="q6" value="no" />
-                  <label for="6n" class="mchat-survey-page-text31">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container049">
-              <span class="mchat-survey-page-text32">
-                7. Does your child ever use his/her index finger to point, to
-                indicate interest in something?
-              </span>
-              <div class="mchat-survey-page-container050">
-                <div class="selector">
-                  <input type="radio" id="7y" name="q7" value="yes" />
-                  <label for="7y" class="mchat-survey-page-text33">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="7n" name="q7" value="no" />
-                  <label for="7n" class="mchat-survey-page-text34">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container053">
-              <span class="mchat-survey-page-text35">
-                8. Can your child play properly with small toys (eg. cars or blocks)
-                without just mouthing, fiddling or dropping them?
-              </span>
-              <div class="mchat-survey-page-container054">
-                <div class="selector">
-                  <input type="radio" id="8y" name="q8" value="yes" />
-                  <label for="8y" class="mchat-survey-page-text36">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="8n" name="q8" value="no" />
-                  <label for="8n" class="mchat-survey-page-text37">No</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mchat-survey-page-container057">
-            <div class="mchat-button-container">
-              <a href="#survey-slide-1" class="mchat-button-navlink">
-                <span>Previous</span>
-              </a>
-            </div>
-            <div class="mchat-button-container">
-              <a href="#survey-slide-3" class="mchat-button-navlink">
-                <span>Next</span>
-              </a>
-            </div>
-          </div>
-          <span class="mchat-survey-page-text38">
-            © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
-          </span>
-        </div>
-        <div id="survey-slide-3" class="mchat-survey-page-container020 step">
-          <div class="mchat-page-numbers-container">
-            <span class="mchat-page-numbers-text"><span>Page 5 of 9</span></span>
-          </div>
-          <header
-            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name10"
-          >
-            <a
-              href="https://thebloombuddy.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="mchat-header-link"
-            >
-              <span>< RETURN HOME</span>
-            </a>
-            <img
-              id="bloombuddy-logo"
-              alt="darklogotransparentstraightlineCopy3573"
-              src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png"
-              loading="eager"
-              class="mchat-header-darklogotransparentstraightline-copy logo"
-            />
-          </header>
-          <div class="mchat-survey-page-container021">
-            <div class="mchat-survey-page-container022">
-              <span class="mchat-survey-page-text13">
-                9. Does your child ever bring objects over to you (parent) to show
-                you something?
-              </span>
-              <div class="mchat-survey-page-container023">
-                <div class="selector">
-                  <input type="radio" id="9y" name="q9" value="yes" />
-                  <label for="9y" class="mchat-survey-page-text14">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="9n" name="q9" value="no" />
-                  <label for="9n" class="mchat-survey-page-text15">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container026">
-              <span class="mchat-survey-page-text16">
-                10. Does your child look you in the eye for more than a second or
-                two?
-              </span>
-              <div class="mchat-survey-page-container027">
-                <div class="selector">
-                  <input type="radio" id="10y" name="q10" value="yes" />
-                  <label for="bloombuddy-logo" class="mchat-survey-page-text17">
-                    Yes
-                  </label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="10n" name="q10" value="no" />
-                  <label for="no" class="mchat-survey-page-text18">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container030">
-              <span class="mchat-survey-page-text19">
-                11. Does your child ever seem oversensitive to noise? (eg. plugging
-                ears)
-              </span>
-              <div class="mchat-survey-page-container031">
-                <div class="selector">
-                  <input type="radio" id="11y" for="q11" name="q11" value="yes" />
-                  <label for="11y" class="mchat-survey-page-text20">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="11n" name="q11" value="no" />
-                  <label for="no" class="mchat-survey-page-text21">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container034">
-              <span class="mchat-survey-page-text22">
-                12. Does your child smile in response to your face or your smile?
-              </span>
-              <div class="mchat-survey-page-container035">
-                <div class="selector">
-                  <input type="radio" id="12y" name="q12" value="yes" />
-                  <label for="12y" class="mchat-survey-page-text23">Yes</label>
-                </div>
-                <div class="selector">
-                  <input
-                    type="radio"
-                    id="12n"
-                    for="q12"
-                    name="question-1"
-                    value="no"
-                  />
-                  <label for="12n" class="mchat-survey-page-text24">No</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mchat-survey-page-container038">
-            <div class="mchat-button-container">
-              <a href="#survey-slide-2" class="mchat-button-navlink">
-                <span>Previous</span>
-              </a>
-            </div>
-            <div class="mchat-button-container">
-              <a href="#survey-slide-4" class="mchat-button-navlink">
-                <span>Next</span>
-              </a>
-            </div>
-          </div>
-          <span class="mchat-survey-page-text25">
-            © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
-          </span>
-        </div>
-        <div id="survey-slide-4" class="mchat-survey-page-container058 step">
-          <div class="mchat-page-numbers-container">
-            <span class="mchat-page-numbers-text"><span>Page 7 of 9</span></span>
-          </div>
-          <header
-            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name12"
-          >
-            <a
-              href="https://thebloombuddy.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="mchat-header-link"
-            >
-              <span>< RETURN HOME</span>
-            </a>
-            <img
-              id="bloombuddy-logo"
-              alt="darklogotransparentstraightlineCopy3573"
-              src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png"
-              loading="eager"
-              class="mchat-header-darklogotransparentstraightline-copy logo"
-            />
-          </header>
-          <div class="mchat-survey-page-container059">
-            <div class="mchat-survey-page-container060">
-              <span class="mchat-survey-page-text39">
-                13. Does your child imitate you? (e.g., you make a face, will your
-                child imitate you?
-              </span>
-              <div class="mchat-survey-page-container061">
-                <div class="selector">
-                  <input type="radio" id="13y" name="q13" value="yes" />
-                  <label for="13y" class="mchat-survey-page-text40">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="13n" for="q13" name="q13" value="no" />
-                  <label for="13n" class="mchat-survey-page-text41">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container064">
-              <span class="mchat-survey-page-text42">
-                14. Does your child respond to his/her name when you call?
-              </span>
-              <div class="mchat-survey-page-container065">
-                <div class="selector">
-                  <input type="radio" id="14y" name="q14" value="yes" />
-                  <label for="yes" class="mchat-survey-page-text43">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="14n" name="q14" value="no" />
-                  <label for="no" class="mchat-survey-page-text44">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container068">
-              <span class="mchat-survey-page-text45">
-                15. If you point at a toy across the room, will your child look at
-                it?
-              </span>
-              <div class="mchat-survey-page-container069">
-                <div class="selector">
-                  <input type="radio" id="15y" name="q15" value="yes" />
-                  <label for="15y" class="mchat-survey-page-text46">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="15n" name="q15" value="no" />
-                  <label for="no" class="mchat-survey-page-text47">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container072">
-              <span class="mchat-survey-page-text48">
-                16. Does your child walk?
-              </span>
-              <div class="mchat-survey-page-container073">
-                <div class="selector">
-                  <input type="radio" id="16y" for="q16" name="q16" value="yes" />
-                  <label for="16y" class="mchat-survey-page-text49">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="16n" name="q16" value="no" />
-                  <label for="16n" class="mchat-survey-page-text50">No</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mchat-survey-page-container076">
-            <div class="mchat-button-container">
-              <a href="#survey-slide-3" class="mchat-button-navlink">
-                <span>Previous</span>
-              </a>
-            </div>
-            <div class="mchat-button-container">
-              <a href="#survey-slide-5" class="mchat-button-navlink">
-                <span>Next</span>
-              </a>
-            </div>
-          </div>
-          <span class="mchat-survey-page-text51">
-            © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
-          </span>
-        </div>
-        <div id="survey-slide-5" class="mchat-survey-page-container077 step">
-          <div class="mchat-page-numbers-container">
-            <span class="mchat-page-numbers-text"><span>Page 8 of 9</span></span>
-          </div>
-          <header
-            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name13"
-          >
-            <a
-              href="https://thebloombuddy.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="mchat-header-link"
-            >
-              <span>< RETURN HOME</span>
-            </a>
-            <img
-              id="bloombuddy-logo"
-              alt="darklogotransparentstraightlineCopy3573"
-              src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png"
-              loading="eager"
-              class="mchat-header-darklogotransparentstraightline-copy logo"
-            />
-          </header>
-          <div class="mchat-survey-page-container078">
-            <div class="mchat-survey-page-container079">
-              <span class="mchat-survey-page-text52">
-                17. Does your child look at things you are looking at?
-              </span>
-              <div class="mchat-survey-page-container080">
-                <div class="selector">
-                  <input type="radio" id="17y" name="q17" value="yes" />
-                  <label for="17y" class="mchat-survey-page-text53">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="17n" for="q17" name="q17" value="no" />
-                  <label for="17n" class="mchat-survey-page-text54">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container083">
-              <span class="mchat-survey-page-text55">
-                18. Does your child make unusual finger movements near his/her face?
-              </span>
-              <div class="mchat-survey-page-container084">
-                <div class="selector">
-                  <input type="radio" id="18y" name="q18" value="yes" />
-                  <label for="18y" class="mchat-survey-page-text56">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="18n" name="q18" value="no" />
-                  <label for="no" class="mchat-survey-page-text57">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container087">
-              <span class="mchat-survey-page-text58">
-                19. Does your child try to attract your attention to his/her own
-                activity?
-              </span>
-              <div class="mchat-survey-page-container088">
-                <div class="selector">
-                  <input type="radio" id="19y" name="q19" value="yes" />
-                  <label for="19y" class="mchat-survey-page-text59">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="19n" name="q19" value="no" />
-                  <label for="19n" class="mchat-survey-page-text60">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container091">
-              <span class="mchat-survey-page-text61">
-                20. Have you ever wondered if your child is deaf?
-              </span>
-              <div class="mchat-survey-page-container092">
-                <div class="selector">
-                  <input type="radio" id="20y" for="q16" name="q20" value="yes" />
-                  <label for="16y" class="mchat-survey-page-text62">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="20n" name="q20" value="no" />
-                  <label for="16n" class="mchat-survey-page-text63">No</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mchat-survey-page-container095">
-            <div class="mchat-button-container">
-              <a href="#survey-slide-4" class="mchat-button-navlink">
-                <span>Previous</span>
-              </a>
-            </div>
-            <div class="mchat-button-container">
-              <a href="#survey-slide-6" class="mchat-button-navlink">
-                <span>Next</span>
-              </a>
-            </div>
-          </div>
-          <span class="mchat-survey-page-text64">
-            © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
-          </span>
-        </div>
-        <div id="survey-slide-6" class="mchat-survey-page-container096 step">
-          <div class="mchat-page-numbers-container">
-            <span class="mchat-page-numbers-text"><span>Page 9 of 9</span></span>
-          </div>
-          <header
-            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name14"
-          >
-            <a
-              href="https://thebloombuddy.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="mchat-header-link"
-            >
-              <span>< RETURN HOME</span>
-            </a>
-            <img
-              id="bloombuddy-logo"
-              alt="darklogotransparentstraightlineCopy3573"
-              src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png"
-              loading="eager"
-              class="mchat-header-darklogotransparentstraightline-copy logo"
-            />
-          </header>
-          <div class="mchat-survey-page-container097">
-            <div class="mchat-survey-page-container098">
-              <span class="mchat-survey-page-text65">
-                21. Does your child understand what people say?
-              </span>
-              <div class="mchat-survey-page-container099">
-                <div class="selector">
-                  <input type="radio" id="17y" name="q17" value="yes" />
-                  <label for="17y" class="mchat-survey-page-text66">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="17n" for="q17" name="q17" value="no" />
-                  <label for="17n" class="mchat-survey-page-text67">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container102">
-              <span class="mchat-survey-page-text68">
-                22. Does your child sometimes stare at nothing or wander with no
-                purpose?
-              </span>
-              <div class="mchat-survey-page-container103">
-                <div class="selector">
-                  <input type="radio" id="18y" name="q18" value="yes" />
-                  <label for="18y" class="mchat-survey-page-text69">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="18n" name="q18" value="no" />
-                  <label for="no" class="mchat-survey-page-text70">No</label>
-                </div>
-              </div>
-            </div>
-            <div class="mchat-survey-page-container106">
-              <span class="mchat-survey-page-text71">
-                23. Does your child look at your face to check your reaction when
-                faced with something unfamiliar?
-              </span>
-              <div class="mchat-survey-page-container107">
-                <div class="selector">
-                  <input type="radio" id="19y" name="q19" value="yes" />
-                  <label for="19y" class="mchat-survey-page-text72">Yes</label>
-                </div>
-                <div class="selector">
-                  <input type="radio" id="19n" name="q19" value="no" />
-                  <label for="19n" class="mchat-survey-page-text73">No</label>
-                </div>
-              </div>
-            </div>
-          </div> {% endcomment %}
-          <div class="mchat-survey-page-container110">
-            <div class="mchat-button-container">
-              {%if questions.has_previous%}
-              <a href="{%url 'quizz'%}?page={{questions.previous_page_number}}" class="mchat-button-navlink">
-                <span>Previous</span>
-              </a>
-              {% endif %}
-            </div>
-            <div class="mchat-button-container">
-              {%if questions.has_next%}
-              <a href="{%url 'quizz'%}?page={{questions.next_page_number}}" class="mchat-button-navlink">
-                <span>Next</span>
-              </a>
-              {%endif%}
-            </div>
-            <a>
-              <button class="mchat-button-navlink"
-              {% if questions.has_next %} 
-              disabled="disabled"
-              style='display:none'
-              
-              {% else %}
-              name="page"
-              value="score"
-              type="submit"
-              {% endif %}>
-              Submit
-              </button>
-            </a>
-          </div>
           <span class="mchat-survey-page-text74">
             © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
           </span>
         </div>
       </div>
-    </div>
-  
-    {% comment %} <script>
-      // // html <div class="parentElm" id="addActive"></div>
+      {% comment %} <script src="/static/js/jquery-3.1.1.min.js"></script>
+      <script src="/static/js/jquery.waypoints.min.js"></script>
+      <script src="/static/js/infinite.min.js"></script>  {% endcomment %}
+      <script>
+          function fill_form() {
+                $items = Item::paginate(4);
 
-      // // js
-      // function toggleClass(){
-      //   // get the properties of an element
-      //   var element = document.getElementById("survey-slides");
+                // Retrieve checked items in session.
+                $checked_items = []
+                if (Session::has('checked_items'))
+                    $checked_items = Session::get('checked_items');
+
+                // Persist new checked items.
+                $checked_items = array_merge($checked_items, Input::get('item'));
+                Session::flash('checked_items', $checked_items);
+
+                return View::make('form')
+                    ->with('items', $items);
+            }
+
+        {% comment %} function onInit() {
+          $inputs = Input::all();
+          if(!empty($inputs)) {
+              Session::flash('inputs', $inputs);
+          } else {
+              Session::keep(['inputs']);
+          }
+          $this['inputs'] = Session::get('inputs');
+          } {% endcomment %}
         
-      // //  check if the element have class list
-      //   if (element.classList) {
-      //     // add active class if true
-      //   element.classList.toggle("active");
-      //   } else {
-      //   var classes = element.className.split(" ");
-      //   var i = classes.indexOf("active");
-      //   }
-      // }
-
-      // Get the container element
-      var formContainer = document.getElementById("survey-slides");
-
-      // Get all buttons with class="btn" inside the container
-      var slide = btnContainer.getElementsByClassName("step");
-
-      // Loop through the buttons and add the active class to the current/clicked button
-      for (var i = 0; i < slide.length; i++) {
-        slides[i].addEventListener("click", function() {
-          var current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
-          this.className += " active";
-        });
-      }
-    </script> {% endcomment %}
-
+        {% comment %} var infinite = new Waypoint.Infinite({
+          element: $('.infinite-container')[0],
+          onBeforePageLoad: function () {
+            $('.loading').show();
+          },
+          onAfterPageLoad: function ($items) {
+            $('.loading').hide();
+          }
+        }); {% endcomment %}
+      </script>
+    </div>
   </body>
 </html>
