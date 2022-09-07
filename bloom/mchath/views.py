@@ -50,12 +50,12 @@ def instruction(request):
 
 def quizz(request):
 
-    if not request.method == 'POST':
-        if 'search-persons-post' in request.session:
-            request.POST = request.session['search-persons-post']
-            request.method = 'POST'
+    # if not request.method == 'POST':
+    #     if 'search-persons-post' in request.session:
+    #         request.POST = request.session['search-persons-post']
+    #         request.method = 'POST'
     if request.method == 'POST':
-        request.session['search-persons-post'] = request.POST
+        # request.session['search-persons-post'] = request.POST
 
         print(request.POST)
         questions=quiz.objects.all()
