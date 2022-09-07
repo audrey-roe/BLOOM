@@ -21,8 +21,8 @@ class customer(models.Model):
 
 class quiz(models.Model):
     question = models.CharField(max_length=200, null=True)
-    op1 = models.CharField(max_length=200, null=True)
-    op2 = models.CharField(max_length=200, null=True)
+    Op1 = models.CharField(max_length=200, null=True)
+    Op2 = models.CharField(max_length=200, null=True)
     ans = models.CharField(max_length=200, null=True)
     
     def __str__(self):

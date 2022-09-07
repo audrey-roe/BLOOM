@@ -47,7 +47,7 @@ def instruction(request):
     return render(request, 'mchat-instructions-page.html')
 
 def quizz(request):
-    if request.POST:
+    if request.method == 'POST':
         print(request.POST)
         questions=quiz.objects.all()
         score = 0
@@ -68,29 +68,30 @@ def quizz(request):
             'total':total,
             'score': score
         }
+        print(context)
         return render(request, 'mchat-results-page.html', context)
     else:
         questions=quiz.objects.all()
 
-        p = Paginator(questions, 4) # 4 questions per page this determines how many objects will be displayed per page
-        page_num = request.GET.get('page', 1) # allows you to access pages by passing value directly  through link
-        page = p.page(page_num)
+    p = Paginator(questions, 4) # 4 questions per page this determines how many objects will be displayed per page
+    page_num = request.GET.get('page', 1) # allows you to access pages by passing value directly  through link
+    page = p.page(page_num)
 
-        try:
-            page = p.page(page_num)
-        except PageNotAnInteger:
-            # if page is not an integer, deliver the first page
-            page = Paginator.page(1)
-        except EmptyPage:
-            # if the page is out of range, deliver the last page
-            page = p.page(1)
-        
-        
-        context = { 
-            'questions':page 
-        
-            # 'questions':questions
-        }
+    try:
+        page = p.page(page_num)
+    except PageNotAnInteger:
+        # if page is not an integer, deliver the first page
+        page = Paginator.page(1)
+    except EmptyPage:
+        # if the page is out of range, deliver the last page
+        page = p.page(1)
+    
+    
+    context = { 
+        'questions':page 
+    
+        # 'questions':questions
+    }
     
     return render(request, 'mchat-survey-page.html', context)
 
