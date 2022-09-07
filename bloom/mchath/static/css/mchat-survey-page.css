@@ -961,15 +961,32 @@
   display: flex;
   margin-top: var(--dl-space-space-oneandhalfunits);
   align-items: center;
-  padding-left: var(--dl-space-space-threeunits);
-  padding-right: var(--dl-space-space-threeunits);
-  flex-direction: row;
+  /* padding-left: var(--dl-space-space-threeunits);
+  padding-right: var(--dl-space-space-threeunits); */
+  flex-direction: column;
   justify-content: space-between;
 }
 .mchat-survey-page-text74 {
   font-size: 0.7rem;
   margin-top: var(--dl-space-space-twounits);
+  align-self: center;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.15;
+  color: var(--dl-color-gray-black);
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  font-size: 0.7rem;
+  margin-top: var(--dl-space-space-twounits);
   margin-bottom: var(--dl-space-space-twounits);
+  width: 100%;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
 }
 @media(max-width: 481px) {
   .mchat-survey-page-container001 {

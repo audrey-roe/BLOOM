@@ -53,9 +53,9 @@
       <div class="info-form-page-container">
         <div id="info-form" class="info-form-page-container01">
           <div class="mchat-page-numbers-container">
-            <span class="mchat-page-numbers-text">
+            {% comment %} <span class="mchat-page-numbers-text">
               <span>Page 3 of 9</span>
-            </span>
+            </span> {% endcomment %}
           </div>
           <header
             class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name8"
@@ -76,11 +76,11 @@
               class="mchat-header-darklogotransparentstraightline-copy logo"
             />
           </header>
-          <form method="POST" action ="/registerPage/" enctype="multipart/form-data">
-            {% csrf_token %}
-            <h1 class="h3">Please, tell us a bit about yourself</h1>
-              <div class="info-form-page-container02">
-                <div>
+            <form style="width: 85%" method="POST" action ="/registerPage/" enctype="multipart/form-data">
+              {% csrf_token %}
+              <h1 class="h3">Please, tell us a bit about yourself</h1>
+                <div class="info-form-page-container02">
+                  <div>
                   <label class="info-form-page-text01">
                     <span>Child&apos;s Name</span>
                     <span class="info-form-page-text03">*</span>
@@ -103,7 +103,7 @@
                     <option value="16 Months">16 Months</option>
                     <option value="17 Months">17 Months</option>
                     <option value="18 Months">18 Months</option>
-                    <option value="19 Months">19 Months</option
+                    <option value="19 Months">19 Months</option>
                     <option value="20 Months">20 Months</option>
                     <option value="21 Months">21 Months</option>
                     <option value="22 Months">22 Months</option>
@@ -182,21 +182,25 @@
                   />
                 </div>
               </div>
-              <div class="info-form-page-container10">
-                <div class="mchat-button-container">
-                  <a
-                    href="/instruction"
-                    class="mchat-button-navlink"
-                  >
-                    <span>Previous</span>
-                  </a>
-                </div>
-                <div class="mchat-button-container">
-                  <a href="/quizz">
-                    <button
+              <div  style="
+              display: flex;
+              flex-direction: column;
+              align-content: center;">
+                <div class="info-form-page-container10">
+                  <div class="mchat-button-container">
+                    <a
+                      href="/instruction"
                       class="mchat-button-navlink"
-                      type="submit"
                     >
+                      <span>Previous</span>
+                    </a>
+                  </div>
+                  <div class="mchat-button-container">
+                    <a href="/quizz">
+                      <button
+                        class="mchat-button-navlink"
+                        type="submit"
+                      >
                       <span>Next</span>
                     </button>
                   </a>

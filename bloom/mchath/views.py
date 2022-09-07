@@ -8,21 +8,10 @@ from django.core.paginator import Paginator
 from .models import quiz, customer
 from django.http import HttpResponse
 from django.core.paginator import Paginator , EmptyPage, PageNotAnInteger
-
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
-
-# def registerPage(request):
-#     if request.POST:
-#         form = createcustomerform(request.POST, request.FILES)
-#         print = (request.FILES)
-#         if form.is_valid():
-#           form.save()
-#         else :
-#             raise Http404
-#         # return redirect(quizz)
-#     context = {'form': form}
-#     return render(request, 'signinfo.html', context)
+@csrf_exempt
 def registerPage(request):
     if request.method == 'POST':     
         if customer.objects.filter(caregiver_email='caregiver_email').exists():
@@ -35,7 +24,8 @@ def registerPage(request):
                     caregiver_email = request.POST['caregiver_email'],
                     relation_to_child=request.POST['relation_to_child'],
                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
-                    date = request.POST['date'],)
+                    # date = request.POST['date'],
+                    )
 
         return redirect(quizz)
     else:
@@ -45,19 +35,19 @@ def registerPage(request):
 def mchat(request):
     return render(request, 'mchat-intro-page.html')
 
+@csrf_exempt
 def instruction(request):
     return render(request, 'mchat-instructions-page.html')
 
+@csrf_exempt
 def quizz(request):
-
-    # if not request.method == 'POST':
-    #     if 'search-persons-post' in request.session:
-    #         request.POST = request.session['search-persons-post']
-    #         request.method = 'POST'
     if request.method == 'POST':
-        # request.session['search-persons-post'] = request.POST
+        for questions in request.POST:
+            request.session[questions] = request.POST[questions]
 
         print(request.POST)
+
+
         questions=quiz.objects.all()
         score = 0
         # wrong=0
@@ -68,11 +58,9 @@ def quizz(request):
             print(request.POST.get(q.question))
             print(q.ans)
             print()
-            if q.ans ==  request.POST.get(q.question):
+            if q.ans ==  request.session.get(q.question):
                 score+=1
                 correct+=1
-            # else:
-            #     wrong+=1
         context = {
             'total':total,
             'score': score
@@ -106,3 +94,11 @@ def quizz(request):
 
 def result(request):
     return render(request, 'mchat-results-page.html', )
+
+@csrf_exempt
+def next(request):
+    if request.method == 'POST':
+        for questions in request.POST:
+            request.session[questions] = request.POST[questions]
+        hun = request.POST['next_link']
+        return redirect(f'/quizz?page={hun}')
