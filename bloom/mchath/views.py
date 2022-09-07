@@ -8,10 +8,10 @@ from django.core.paginator import Paginator
 from .models import quiz, customer
 from django.http import HttpResponse
 from django.core.paginator import Paginator , EmptyPage, PageNotAnInteger
-from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
-@csrf_exempt
+
 def registerPage(request):
     if request.method == 'POST':     
         if customer.objects.filter(caregiver_email='caregiver_email').exists():
@@ -24,8 +24,7 @@ def registerPage(request):
                     caregiver_email = request.POST['caregiver_email'],
                     relation_to_child=request.POST['relation_to_child'],
                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
-                    # date = request.POST['date'],
-                    )
+                    date = request.POST['date'],)
 
         return redirect(quizz)
     else:
@@ -35,11 +34,9 @@ def registerPage(request):
 def mchat(request):
     return render(request, 'mchat-intro-page.html')
 
-@csrf_exempt
 def instruction(request):
     return render(request, 'mchat-instructions-page.html')
 
-@csrf_exempt
 def quizz(request):
     if request.method == 'POST':
         for questions in request.POST:
@@ -95,7 +92,7 @@ def quizz(request):
 def result(request):
     return render(request, 'mchat-results-page.html', )
 
-@csrf_exempt
+
 def next(request):
     if request.method == 'POST':
         for questions in request.POST:
