@@ -91,14 +91,14 @@
                     <div class="selector">
                       <input type="radio" id="" name="{{q.question}}" value="op1" />
                       <label for="" class="mchat-survey-page-text01">
-                      {{q.op1}}
+                      {{q.Op1}}
                       {% comment %} Yes {% endcomment %}
                       </label>
                     </div>
                     <div class="selector">
                       <input type="radio" id="" name="{{q.question}}" value="op2" />
                       <label for="" class="mchat-survey-page-text02">
-                        {{q.op2}}
+                        {{q.Op2}}
                         {% comment %} No {% endcomment %}
                       </label>
                     </div>
@@ -691,7 +691,7 @@
               </a>
               {%endif%}
             </div>
-            <a href='/result'>
+            <a>
               <button class="mchat-button-navlink"
               {% if questions.has_next %} 
               disabled="disabled"

@@ -49,10 +49,10 @@
   </head>
   <body>
     <div>
-      <link href="/static/css/mchat-results-page.css" rel="stylesheet" />
+      <link href="../static/css/mchat-results-page.css" rel="stylesheet" />
 
       <div class="mchat-results-page-container">
-        <div id="low-risk-result" class="mchat-results-page-container1">
+        <div id="low-risk-result" class="mchat-results-page-container1 result" >
           <header
             class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name4"
           >
@@ -111,7 +111,7 @@
             © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
           </span>
         </div>
-        <div id="medium-risk-result" class="mchat-results-page-container2">
+        <div id="medium-risk-result" class="mchat-results-page-container2 result">
           <header
             class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name15"
           >
@@ -173,7 +173,7 @@
             © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
           </span>
         </div>
-        <div id="high-risk-result" class="mchat-results-page-container3">
+        <div id="high-risk-result" class="mchat-results-page-container3 result">
           <header
             class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name16"
           >
@@ -228,5 +228,18 @@
         </div>
       </div>
     </div>
+    <script>
+      
+      let surveyAnswer = ({{score}})
+      
+
+      if (surveyAnswer <= 2) {
+        document.getElementById("low-risk-result").style.display = 'flex';
+      } else if (surveyAnswer <= 6) {
+        document.getElementById("medium-risk-result").style.display = 'flex';
+      } else {
+        document.getElementById("high-risk-result").style.display = 'flex';
+      }
+    </script>
   </body>
 </html>

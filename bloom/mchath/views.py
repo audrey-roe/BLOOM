@@ -1,4 +1,5 @@
 # Create your views here.
+import re
 from django.http import Http404
 from django.shortcuts import redirect,render
 from django.core.paginator import Paginator
@@ -32,6 +33,7 @@ def registerPage(request):
                     child_age = request.POST['child_age'].replace(' Months',''),
                     child_name = request.POST['child_name'],
                     caregiver_email = request.POST['caregiver_email'],
+                    relation_to_child=request.POST['relation_to_child'],
                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
                     date = request.POST['date'],)
 

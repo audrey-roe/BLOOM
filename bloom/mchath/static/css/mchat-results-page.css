@@ -388,3 +388,10 @@
     font-size: 0.5rem;
   }
 }
+.result {
+  display: none;
+}
+
+.active {
+  display: flex;
+}

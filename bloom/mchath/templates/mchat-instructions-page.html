@@ -43,11 +43,11 @@
       data-tag="font"
     />
 
-    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
   </head>
   <body>
     <div>
-      <link href="/static/css/mchat-instructions-page.css" rel="stylesheet" />
+      <link href="../static/css/mchat-instructions-page.css" rel="stylesheet" />
 
       <div class="mchat-instructions-page-container">
         <div id="instructions" class="mchat-instructions-page-container1">
@@ -75,7 +75,7 @@
               class="mchat-header-darklogotransparentstraightline-copy logo"
             />
           </header>
-          <form method="" action ="" enctype="multipart/form-data">
+          <form method="" action ="/registerPage/" enctype="multipart/form-data">
             {% csrf_token %}
             <h1 class="mchat-instructions-page-text">
               <span>Instructions for Taking the</span>
@@ -125,7 +125,7 @@
                   href="/registerPage"
                   class="mchat-instructions-page-navlink1"
                 > </a>               {% endcomment %}
-                  <a href="/registerPage">
+                  <a href="/registerPage/">
                     <button class="mchat-button-navlink" type="submit">
                       <span>Next</span>
                     </button>
