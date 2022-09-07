@@ -54,7 +54,7 @@
       <div class="mchat-survey-page-container" id="survey-slides">
         <div id="survey-slide-1" class="mchat-survey-page-container001 step active" >
           <div class="mchat-page-numbers-container">
-            <span class="mchat-page-numbers-text"><span>Page 4 of 9</span></span>
+            {% comment %} <span class="mchat-page-numbers-text"><span>Page 4 of 9</span></span> {% endcomment %}
           </div>
           <header
             class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name9"
@@ -678,15 +678,33 @@
           </div> {% endcomment %}
           <div class="mchat-survey-page-container110">
             <div class="mchat-button-container">
-              <a href="#survey-slide-5" class="mchat-button-navlink">
+              {%if questions.has_previous%}
+              <a href="{%url 'quizz'%}?page={{questions.previous_page_number}}" class="mchat-button-navlink">
                 <span>Previous</span>
               </a>
+              {% endif %}
             </div>
             <div class="mchat-button-container">
-              <button type="button" href="/result" class="mchat-button-navlink">
-                <span>Submit</span>
-              </button>
+              {%if questions.has_next%}
+              <a href="{%url 'quizz'%}?page={{questions.next_page_number}}" class="mchat-button-navlink">
+                <span>Next</span>
+              </a>
+              {%endif%}
             </div>
+            <a href='/result'>
+              <button class="mchat-button-navlink"
+              {% if questions.has_next %} 
+              disabled="disabled"
+              style='display:none'
+              
+              {% else %}
+              name="page"
+              value="score"
+              type="submit"
+              {% endif %}>
+              Submit
+              </button>
+            </a>
           </div>
           <span class="mchat-survey-page-text74">
             © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
@@ -695,7 +713,7 @@
       </div>
     </div>
   
-    <script>
+    {% comment %} <script>
       // // html <div class="parentElm" id="addActive"></div>
 
       // // js
@@ -727,7 +745,7 @@
           this.className += " active";
         });
       }
-    </script>
+    </script> {% endcomment %}
 
   </body>
 </html>

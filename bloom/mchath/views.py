@@ -93,3 +93,6 @@ def quizz(request):
         }
     
     return render(request, 'mchat-survey-page.html', context)
+
+def result(request):
+    return render(request, 'mchat-results-page.html', )
