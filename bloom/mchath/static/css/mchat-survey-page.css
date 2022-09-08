@@ -959,35 +959,83 @@
 .mchat-survey-page-container110 {
   width: 100%;
   display: flex;
-  margin-top: var(--dl-space-space-oneandhalfunits);
+  margin-top: var(--dl-space-space-threeunits);
   align-items: center;
   /* padding-left: var(--dl-space-space-threeunits);
   padding-right: var(--dl-space-space-threeunits); */
   flex-direction: column;
   justify-content: space-between;
 }
+
 .mchat-survey-page-text74 {
   font-size: 0.7rem;
-  margin-top: var(--dl-space-space-twounits);
   align-self: center;
-  font-weight: 400;
-  font-style: normal;
-  text-transform: none;
-  letter-spacing: normal;
-  line-height: 1.15;
-  color: var(--dl-color-gray-black);
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  font-size: 0.7rem;
-  margin-top: var(--dl-space-space-twounits);
-  margin-bottom: var(--dl-space-space-twounits);
   width: 100%;
+  text-align: center;padding-top: 3vh;
 }
+
 .button-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
 }
+
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: inherit;
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1em;
+  height: 1em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--dl-color-purples-100);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+  /* border: 0.15em solid currentColor; */
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+  transition: 120ms transform ease-in-out;
+  outline: max(2px, 0.3em) solid rgba(128, 0, 128, 0.42);
+  /* outline-offset: max(2px, 0.1em); */
+  border: 0.02em solid white;
+}
+
+input[type="radio"]:focus {
+  /* transform: scale(0); */
+  transition: 120ms transform ease-in-out;
+  outline: max(2px, 0.3em) solid rgba(128, 0, 128, 0.42);
+  /* outline-offset: max(2px, 0.1em); */
+  border: 0.02em solid white;
+}
+
 @media(max-width: 481px) {
   .mchat-survey-page-container001 {
     width: 80%;
@@ -1137,7 +1185,7 @@
 }
 
 .questions{
-  margin-top: 25px;
+  margin-top: var(--dl-space-space-threeunits);
 }
 /* .infinite-container{
   display: flex;
