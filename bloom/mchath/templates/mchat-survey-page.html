@@ -121,7 +121,6 @@
 </head>
 
 <body>
-    <form method="POST" action="/quizz/" enctype="multipart/form-data">
         <div>
             <link href="/static/css/mchat-survey-page.css" rel="stylesheet" />
             <div class="mchat-survey-page-container" id="survey-slides">
@@ -138,69 +137,72 @@
 
                     <div class="mchat-survey-page-container002 infinite-container">
                         <div class="mchat-survey-page-container003">
+                            <form method="POST" action="/quizz/" enctype="multipart/form-data">
 
-                            {% csrf_token %} {%for q in questions %}
-                            <div class="questions infinite-item">
-                                <span class="mchat-survey-page-text">
-                                  {{q.question}}
-                            
-                                </span>
-                                <div class="mchat-survey-page-container004">
-                                    <div class="selector infinite-item">
-                                        <input type="radio" id="op1" name="{{q.question}}" value="op1" />
-                                        <label for="op1" class="mchat-survey-page-text01">
-                                            {{q.Op1}}
-                                        </label>
+                                    {% csrf_token %} {%for q in questions %}
+                                    <div class="questions infinite-item">
+                                        <span class="mchat-survey-page-text">
+                                        {{q.question}}
+                                    
+                                        </span>
+                                        <div class="mchat-survey-page-container004">
+                                            <div class="selector infinite-item">
+                                                <input type="radio" id="op1" name="{{q.question}}" value="op1" />
+                                                <label for="op1" class="mchat-survey-page-text01">
+                                                    {{q.Op1}}
+                                                </label>
+                                            </div>
+                                            <div class="selector">
+                                                <input type="radio" id="op2" name="{{q.question}}" value="op2" />
+                                                <label for="op2" class="mchat-survey-page-text02">
+                                        {{q.Op2}}
+                                    </label>
+                                            </div>
+                                        </div>
+                                        {% endfor %} {%if questions.has_previous%}
+                                        <input type='hidden' name="prev_link" value={{questions.previous_page_number}} class="mchat-button-navlink"> {% endif %} {%if questions.has_next%}
+                                        <input type='hidden' name="next_link" value={{questions.next_page_number}} class="mchat-button-navlink"> {% endif %}
+
+                                        <div class="mchat-survey-page-container110">
+                                            <div class="button-container">
+                                                <div class="mchat-button-container">
+                                                    {%if questions.has_previous%}
+                                                    <a href="?page={{questions.previous_page_number}}" class="mchat-button-navlink">
+                                                        <span>Previous</span>
+                                                    </a>
+                                                    {%endif%}
+                                                </div>
+                                                <div class="mchat-button-container">
+                                                    {%if questions.has_next%}
+                                                    <button type="submit" formaction='/next/' class="mchat-button-navlink">
+                                                    <span>Next</span>
+                                                </button> {%endif%}
+                                                </div>
+                                                <a>
+                                                    <button class="mchat-button-navlink" {% if questions.has_next %} 
+                                                            disabled="disabled" 
+                                                            style="display:none" {% else %} 
+                                                            name="page" 
+                                                            value=inputs.{{q.question}} 
+                                                            type="submit" {% endif %}>
+                                                    Submit
+                                                    </button>
+                                                </a>
+                                            </div>
+                                            <span class="mchat-survey-page-text74">
+                                                © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
+                                            </span>
+                                        </div>
                                     </div>
-                                    <div class="selector">
-                                        <input type="radio" id="op2" name="{{q.question}}" value="op2" />
-                                        <label for="op2" class="mchat-survey-page-text02">
-                                {{q.Op2}}
-                              </label>
-                                    </div>
-                                </div>
-                                {% endfor %} {%if questions.has_previous%}
-                                <input type='hidden' name="prev_link" value={{questions.previous_page_number}} class="mchat-button-navlink"> {% endif %} {%if questions.has_next%}
-                                <input type='hidden' name="next_link" value={{questions.next_page_number}} class="mchat-button-navlink"> {% endif %}
-
-
-                            </div>
+                            </form>
                         </div>
                     </div>
-
-                </div>
-
-                
-                <div class="mchat-survey-page-container110">
-                    <div class="button-container">
-                        <div class="mchat-button-container">
-                            {%if questions.has_previous%}
-                            <a href="?page={{questions.previous_page_number}}" class="mchat-button-navlink">
-                                <span>Previous</span>
-                            </a>
-                            {%endif%}
-                        </div>
-                        <div class="mchat-button-container">
-                            {%if questions.has_next%}
-                            <button type="submit" formaction='/next/' class="mchat-button-navlink">
-                            <span>Next</span>
-                        </button> {%endif%}
-                        </div>
-                        <a>
-                            <button class="mchat-button-navlink" {% if questions.has_next %} disabled="disabled" style='display:none' {% else %} name="page" value=inputs.{{q.question}} type="submit" {% endif %}>
-                            Submit
-                            </button>
-                        </a>
-                    </div>
-                    <span class="mchat-survey-page-text74">
-                        © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
-                    </span>
-                </div>
+                 </div>
 
             </div>
         </div>
         
-    </form>
+ 
     <script>
         function fill_form() {
             $items = Item::paginate(4);
