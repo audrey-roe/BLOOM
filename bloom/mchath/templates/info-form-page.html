@@ -76,7 +76,7 @@
               class="mchat-header-darklogotransparentstraightline-copy logo"
             />
           </header>
-            <form style="width: 85%" method="POST" action ="/registerPage/" enctype="multipart/form-data">
+            <form style="width: 85%" method="POST" action ="/quizz/">
               {% csrf_token %}
               <h1 class="h3">Please, tell us a bit about yourself</h1>
                 <div class="info-form-page-container02">
@@ -170,17 +170,18 @@
                   />
                 </div>
                 <div class="info-form-page-container09">
-                  <label class="info-form-page-text19">
+                  {% comment %} <label class="info-form-page-text19">
                     <span>Today&apos;s Date</span>
                     <span class="info-form-page-text21">*</span>
-                  </label>
+                  </label> {% endcomment %}
                   <input
                     type="datetime-local"
-                    required
+                    id = "date"
+                    autocomplete="on"
                     class="info-form-page-textinput5 input"
                     name="date"
                   />
-                </div>
+                </div> 
               </div>
               <div  style="
               display: flex;
@@ -196,8 +197,8 @@
                     </a>
                   </div>
                   <div class="mchat-button-container">
-                    <a href="/quizz">
-                      <button
+                    <a href="/quizz/">
+                      <button href="/quizz/"
                         class="mchat-button-navlink"
                         type="submit"
                       >
@@ -213,5 +214,14 @@
         </div>
       </div>
     </div>
+    <script>
+      function My_Date() {
+          var d = document.getElementById(
+                      "date").autocomplete;
+           
+          document.getElementById("test").innerHTML
+                      = d;
+      }
+    </script>
   </body>
 </html>

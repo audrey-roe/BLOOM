@@ -12,24 +12,40 @@ from django.core.paginator import Paginator , EmptyPage, PageNotAnInteger
 
 # Create your views here.
 
+# def registerPage(request):
+#     if request.method == 'POST':     
+#         if customer.objects.filter(caregiver_email='caregiver_email').exists():
+#             return redirect (quizz)
+#         else:
+#             customer.objects.create(
+#                     caregiver_name = request.POST['caregiver_name'],
+#                     child_age = request.POST['child_age'].replace(' Months',''),
+#                     child_name = request.POST['child_name'],
+#                     caregiver_email = request.POST['caregiver_email'],
+#                     relation_to_child=request.POST['relation_to_child'],
+#                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
+#                     date = request.POST['date'],)
+
+#         return redirect(quizz)
+#     else:
+#         return render (request, 'info-form-page.html')
+    # return redirect(quizz)
+
 def registerPage(request):
     if request.method == 'POST':     
-        if customer.objects.filter(caregiver_email='caregiver_email').exists():
-            return redirect (quizz)
-        else:
+        # if not customer.objects.filter(caregiver_email = request.POST.get['caregiver_email']).exists():
+            # return redirect (quizz)
             customer.objects.create(
                     caregiver_name = request.POST['caregiver_name'],
                     child_age = request.POST['child_age'].replace(' Months',''),
                     child_name = request.POST['child_name'],
                     caregiver_email = request.POST['caregiver_email'],
-                    relation_to_child=request.POST['relation_to_child'],
                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
                     date = request.POST['date'],)
 
-        return redirect(quizz)
+            return redirect(quizz)
     else:
-        return render (request, 'info-form-page.html')
-    # return redirect(quizz)
+        return render(request, 'info-form-page.html')
 
 def mchat(request):
     return render(request, 'mchat-intro-page.html')

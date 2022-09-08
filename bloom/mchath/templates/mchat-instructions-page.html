@@ -51,14 +51,13 @@
 
       <div class="mchat-instructions-page-container">
         <div id="instructions" class="mchat-instructions-page-container1">
-          <div class="mchat-page-numbers-container">
+          {% comment %} <div class="mchat-page-numbers-container">
             <span class="mchat-page-numbers-text">
               <span>Page 2 of 9</span>
             </span>
-          </div>
+          </div> {% endcomment %}
           <header
-            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name7"
-          >
+            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name7" >
             <a
               href="https://thebloombuddy.com"
               target="_blank"
@@ -76,7 +75,6 @@
             />
           </header>
           <form method="" action ="/registerPage/" enctype="multipart/form-data">
-            {% csrf_token %}
             <h1 class="mchat-instructions-page-text">
               <span>Instructions for Taking the</span>
               <br class="h1" />

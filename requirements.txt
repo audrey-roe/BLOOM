@@ -1,5 +1,7 @@
 django==4.1
 psycopg2-binary==2.8.6
 xhtml2pdf==0.2.5
+# pip install django-crispy-forms
+
 
 #pip install -r requirements.txt
