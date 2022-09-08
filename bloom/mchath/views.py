@@ -1,13 +1,13 @@
 # Create your views here.
-import re
-from django.http import Http404
+import os 
 from django.shortcuts import redirect,render
 from django.core.paginator import Paginator
 # from django.contrib.auth import login,logout,authenticate
 # from .forms import createcustomerform, quizform
 from .models import quiz, customer
-from django.http import HttpResponse
 from django.core.paginator import Paginator , EmptyPage, PageNotAnInteger
+from .utils import render_to_pdf
+
 
 
 # Create your views here.
@@ -41,9 +41,10 @@ def registerPage(request):
                     child_name = request.POST['child_name'],
                     caregiver_email = request.POST['caregiver_email'],
                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
-                    date = request.POST['date'],)
+                    date = request.POST['date1'],)
 
-            return redirect(quizz)
+            return render(request, 'mchat-survey-page.html')
+            # return redirect(quizz)
     else:
         return render(request, 'info-form-page.html')
 
@@ -115,3 +116,47 @@ def next(request):
             request.session[questions] = request.POST[questions]
         hun = request.POST['next_link']
         return redirect(f'/quizz?page={hun}')
+
+
+# def resultpdf(request):
+#     #Retrieve data or whatever you need
+#     return render_to_pdf(
+#             'mchat-results-page.html',
+#             {
+#                 'pagesize':'A4',
+#                 'mylist': results,
+#             }
+#         )
+
+# from django.shortcuts import render
+# from django.http import HttpResponse
+# from wsgiref.util import FileWrapper
+
+
+# def download_pdf(request):
+#     filename = 'faults.pdf'
+#     content = FileWrapper(filename)
+#     response = HttpResponse(content, content_type='application/pdf')
+#     response['Content-Length'] = os.path.getsize(filename)
+#     response['Content-Disposition'] = 'attachment; filename=%s' % 'faults.pdf'
+#     return response
+
+import mimetypes
+# import os module
+import os
+# Import HttpResponse module
+from django.http.response import HttpResponse
+# Import render module
+from django.shortcuts import render
+from pathlib import Path
+import pandas as pd
+
+
+def download_file_low(request):
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    file_name = 'low_risk_result.pdf'
+    filepath = BASE_DIR + '/mchath/Files/' + file_name
+    file = open(filepath.format(file_name), 'rb')
+    response = HttpResponse(file, content_type='application/pdf')
+    response['Content-Disposition'] = "attachment; filename={}".format(file_name)
+    return response

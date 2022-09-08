@@ -175,15 +175,11 @@
                     <span class="info-form-page-text21">*</span>
                   </label>
                   <input
-                    type="date" 
                     class="info-form-page-textinput5 input"
                     id = "date1"
                     name = "date1"
                     readonly/>
-                    <button onclick=""
-                    style="background-color: #6c40d2; display: flex; position: relative; width: 8.875rem; box-shadow: 5px 5px 10px 0px #d4d4d4; color: var(--dl-color-gray-white); font-family: Poppins; font-weight: 400; padding-bottom: 0.65rem; padding-top: 0.65rem; position: relative; border-radius: 8px; margin-top: 3px;">
-                      <span>Click to set date</span>
-                    </button>
+                    
                 </div> 
               </div>
               <div  style="
@@ -212,15 +208,18 @@
               </div>
               </form>
               <script>
-                function My_Date() {
-                  var today = new Date();
-                  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+ today.getDate();
-                  var time = today.getHours()+":"+today.getMintues()+":"+today.getSeconds();
-    
-                  var dateTime = date +' '+ time;
-    
-                  document.getElementById('date1').innerHTML = dateTime;
-                }
+                  var date = new Date();
+
+                  var day = date.getDate();
+                  var month = date.getMonth() + 1;
+                  var year = date.getFullYear();
+
+                  if (month < 10) month = "0" + month;
+                  if (day < 10) day = "0" + day;
+
+                  var today = year + "-" + month + "-" + day;    
+                  document.getElementById("date1").value = today;
+              
               </script>
               <span class="info-form-page-text22">
                 © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton

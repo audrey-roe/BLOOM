@@ -10,6 +10,8 @@ urlpatterns = [
     path('quizz/', views.quizz, name='quizz'),
     path('instruction/', views.instruction, name='instruction'),
     path('registerPage/', views.registerPage, name='registerPage'),
-    path('next/', views.next)
+    path('next/', views.next),
+    path('download_file/', views.download_file, name = 'download_file' ),
+
     # path('registerPage_post/', views.registerPage_post, name='registerPage_post'),
 ]
