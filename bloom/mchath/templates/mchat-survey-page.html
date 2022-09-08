@@ -175,9 +175,9 @@
                     <div class="button-container">
                         <div class="mchat-button-container">
                             {%if questions.has_previous%}
-                            <button href="?page={{questions.previous_page_number}}" class="mchat-button-navlink">
+                            <a href="?page={{questions.previous_page_number}}" class="mchat-button-navlink">
                                 <span>Previous</span>
-                            </button>
+                            </a>
                             {%endif%}
                         </div>
                         <div class="mchat-button-container">
@@ -187,9 +187,9 @@
                         </button> {%endif%}
                         </div>
                         <a>
-                            <butto class="mchat-button-navlink" {% if questions.has_next %} disabled="disabled" style='display:none' {% else %} name="page" value=inputs.{{q.question}} type="submit" {% endif %}>
+                            <button class="mchat-button-navlink" {% if questions.has_next %} disabled="disabled" style='display:none' {% else %} name="page" value=inputs.{{q.question}} type="submit" {% endif %}>
                             Submit
-                            </butto>
+                            </button>
                         </a>
                     </div>
                     <span class="mchat-survey-page-text74">
@@ -249,3 +249,136 @@
 </body>
 
 </html>
+
+
+<!-- 
+removed this from the cloud server
+<body>
+    <form method="POST" action="/quizz/" enctype="multipart/form-data">
+        <div>
+            <link href="/static/css/mchat-survey-page.css" rel="stylesheet" />
+            <div class="mchat-survey-page-container" id="survey-slides">
+                <div id="survey-slide-1" class="mchat-survey-page-container001 step active">
+                    {% comment %}
+                    <div class="mchat-page-numbers-container">
+                        <span class="mchat-page-numbers-text"><span>Page 4 of 9</span></span>
+                    </div> {% endcomment %}
+                    <header class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name9">
+                        <a href="https://thebloombuddy.com" target="_blank" rel="noreferrer noopener" class="mchat-header-link">
+                            <span>< RETURN HOME</span>
+                        </a>
+                        <img id="bloombuddy-logo" alt="darklogotransparentstraightlineCopy3573" src="/static/images/no%20bg%20dark_logo_transparent_straightline_1-1200h.png" loading="eager" class="mchat-header-darklogotransparentstraightline-copy logo" />
+                    </header>
+
+                    <div class="mchat-survey-page-container002 infinite-container">
+                        <div class="mchat-survey-page-container003">
+
+                            {% csrf_token %} {%for q in questions %}
+                            <div class="questions infinite-item">
+                                <span class="mchat-survey-page-text">
+                                  {{q.question}}
+                            
+                                </span>
+                                <div class="mchat-survey-page-container004">
+                                    <div class="selector infinite-item">
+
+                                        <input type="radio" id="" name="{{q.question}}" value="op1" />
+                                        <label for="" class="mchat-survey-page-text01">
+                                        {{q.Op1}}
+                                        </label>
+                                    </div>
+                                    <div class="selector">
+                                        <input type="radio" id="" name="{{q.question}}" value="op2" />
+                                        <label for="" class="mchat-survey-page-text02">
+                                {{q.Op2}}
+                              </label>
+                                    </div>
+                                </div>
+                                {% endfor %} {%if questions.has_previous%}
+                                <input type='hidden' name="prev_link" value={{questions.previous_page_number}} class="mchat-button-navlink"> {% endif %} {%if questions.has_next%}
+                                <input type='hidden' name="next_link" value={{questions.next_page_number}} class="mchat-button-navlink"> {% endif %}
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="mchat-survey-page-container110">
+                    <div class="button-container">
+                        <div class="mchat-button-container">
+                            {%if questions.has_previous%}
+                            <a href="?page={{questions.previous_page_number}}" class="mchat-button-navlink">
+                                <span>Previous</span>
+                            </a>
+                            {%endif%}
+                        </div>
+                        <div class="mchat-button-container">
+                            {%if questions.has_next%}
+                            <button type="submit" formaction='/next/' class="mchat-button-navlink">
+                            <span>Next</span>
+                        </button> {%endif%}
+                        </div>
+                        <a>
+                            <button class="mchat-button-navlink" {% if questions.has_next %} disabled="disabled" style='display:none' {% else %} name="page" value=inputs.{{q.question}} type="submit" {% endif %}>
+                            Submit
+                            </button>
+                        </a>
+                    </div>
+                    <span class="mchat-survey-page-text74">
+                        © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+    <script>
+        function fill_form() {
+            $items = Item::paginate(4);
+
+            // Retrieve checked items in session.
+            $checked_items = []
+            if (Session::has('checked_items'))
+                $checked_items = Session::get('checked_items');
+
+            // Persist new checked items.
+            $checked_items = array_merge($checked_items, Input::get('item'));
+            Session::flash('checked_items', $checked_items);
+
+            return View::make('form') -
+                >
+                with('items', $items);
+        }
+
+        { % comment %
+        }
+
+        function onInit() {
+            $inputs = Input::all();
+            if (!empty($inputs)) {
+                Session::flash('inputs', $inputs);
+            } else {
+                Session::keep(['inputs']);
+            }
+            $this['inputs'] = Session::get('inputs');
+        } { % endcomment %
+        }
+
+        { % comment %
+        }
+        var infinite = new Waypoint.Infinite({
+            element: $('.infinite-container')[0],
+            onBeforePageLoad: function() {
+                $('.loading').show();
+            },
+            onAfterPageLoad: function($items) {
+                $('.loading').hide();
+            }
+        }); { % endcomment %
+        }
+    </script>
+</body> -->
