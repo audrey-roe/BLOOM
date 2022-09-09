@@ -12,28 +12,10 @@ from .utils import render_to_pdf
 
 # Create your views here.
 
-# def registerPage(request):
-#     if request.method == 'POST':     
-#         if customer.objects.filter(caregiver_email='caregiver_email').exists():
-#             return redirect (quizz)
-#         else:
-#             customer.objects.create(
-#                     caregiver_name = request.POST['caregiver_name'],
-#                     child_age = request.POST['child_age'].replace(' Months',''),
-#                     child_name = request.POST['child_name'],
-#                     caregiver_email = request.POST['caregiver_email'],
-#                     relation_to_child=request.POST['relation_to_child'],
-#                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
-#                     date = request.POST['date'],)
-
-#         return redirect(quizz)
-#     else:
-#         return render (request, 'info-form-page.html')
-    # return redirect(quizz)
 
 def registerPage(request):
     if request.method == 'POST':     
-        # if not customer.objects.filter(caregiver_email = request.POST.get['caregiver_email']).exists():
+#         if customer.objects.filter(caregiver_email='caregiver_email').exists():
             # return redirect (quizz)
             customer.objects.create(
                     caregiver_name = request.POST['caregiver_name'],
@@ -150,6 +132,8 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 from pathlib import Path
 import pandas as pd
+from django.core.mail import send_mail
+
 
 
 def download_file_low(request):
@@ -159,4 +143,47 @@ def download_file_low(request):
     file = open(filepath.format(file_name), 'rb')
     response = HttpResponse(file, content_type='application/pdf')
     response['Content-Disposition'] = "attachment; filename={}".format(file_name)
+    send_mail(
+    'M-CHAT-R-F™️ Screening results',# 'Subject here',
+    'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
+    # 'from@example.com',
+    customer.caregiver_email, # ['to@example.com'],
+    fail_silently=False,
+)
+
+    return response
+
+
+def download_file_mid(request):
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    file_name = 'medium_risk_result.pdf'
+    filepath = BASE_DIR + '/mchath/Files/' + file_name
+    file = open(filepath.format(file_name), 'rb')
+    response = HttpResponse(file, content_type='application/pdf')
+    response['Content-Disposition'] = "attachment; filename={}".format(file_name)
+    send_mail(
+    'M-CHAT-R-F™️ Screening results',# 'Subject here',
+    'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
+    # 'from@example.com',
+    customer.caregiver_email, # ['to@example.com'],
+    fail_silently=False,
+)
+
+    return response
+
+def download_file_hi(request):
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    file_name = 'high_risk_result.pdf'
+    filepath = BASE_DIR + '/mchath/Files/' + file_name
+    file = open(filepath.format(file_name), 'rb')
+    response = HttpResponse(file, content_type='application/pdf')
+    response['Content-Disposition'] = "attachment; filename={}".format(file_name)
+    send_mail(
+    'M-CHAT-R-F™️ Screening results',# 'Subject here',
+    'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
+    # 'from@example.com',
+    customer.caregiver_email, # ['to@example.com'],
+    fail_silently=False,
+)
+
     return response
