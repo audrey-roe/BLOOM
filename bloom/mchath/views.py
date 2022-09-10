@@ -20,7 +20,8 @@ def registerPage(request):
             customer.objects.create(
                     caregiver_name = request.POST['caregiver_name'],
                     child_age = request.POST['child_age'].replace(' Months',''),
-                    child_name = request.POST['child_name'],
+                    child_name = request.POST['child_name'], 
+                    relation_to_child = request.POST['relation_to_child'], 
                     caregiver_email = request.POST['caregiver_email'],
                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
                     date = request.POST['date1'],)
@@ -45,7 +46,7 @@ def quizz(request):
 
 
         questions=quiz.objects.all()
-        score = 0
+        score = 23
         # wrong=0
         correct=0
         total=0
@@ -55,8 +56,9 @@ def quizz(request):
             print(q.ans)
             print()
             if q.ans ==  request.session.get(q.question):
-                score+=1
+                score-=1
                 correct+=1
+
         context = {
             'total':total,
             'score': score
