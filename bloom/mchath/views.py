@@ -12,24 +12,42 @@ from .utils import render_to_pdf
 
 # Create your views here.
 
-
 def registerPage(request):
     if request.method == 'POST':     
-#         if customer.objects.filter(caregiver_email='caregiver_email').exists():
-            # return redirect (quizz)
+        if customer.objects.filter(caregiver_email='caregiver_email').exists():
+            return redirect (quizz)
+        else:
             customer.objects.create(
                     caregiver_name = request.POST['caregiver_name'],
                     child_age = request.POST['child_age'].replace(' Months',''),
-                    child_name = request.POST['child_name'], 
+                    child_name = request.POST['child_name'],
                     relation_to_child = request.POST['relation_to_child'], 
                     caregiver_email = request.POST['caregiver_email'],
                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
                     date = request.POST['date1'],)
 
-            return render(request, 'mchat-survey-page.html')
-            # return redirect(quizz)
+            return redirect(quizz)
     else:
         return render(request, 'info-form-page.html')
+
+# def registerPage(request):
+#     if request.method == 'POST':     
+#         if customer.objects.filter(caregiver_email='caregiver_email').exists():
+#             return redirect (quizz)
+#         else:
+#             customer.objects.create(
+#                     caregiver_name = request.POST['caregiver_name'],
+#                     child_age = request.POST['child_age'].replace(' Months',''),
+#                     child_name = request.POST['child_name'], 
+#                     relation_to_child = request.POST['relation_to_child'], 
+#                     caregiver_email = request.POST['caregiver_email'],
+#                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
+#                     date = request.POST['date1'],)
+
+#             return render(request, 'mchat-survey-page.html')
+#             # return redirect(quizz)
+#     else:
+#         return render(request, 'info-form-page.html')
 
 def mchat(request):
     return render(request, 'mchat-intro-page.html')
@@ -62,8 +80,10 @@ def quizz(request):
         context = {
             'total':total,
             'score': score
-        }
+        }      
         print(context)
+        
+
         return render(request, 'mchat-results-page.html', context)
     else:
         questions=quiz.objects.all()
@@ -145,13 +165,13 @@ def download_file_low(request):
     file = open(filepath.format(file_name), 'rb')
     response = HttpResponse(file, content_type='application/pdf')
     response['Content-Disposition'] = "attachment; filename={}".format(file_name)
-    send_mail(
-    'M-CHAT-R-F™️ Screening results',# 'Subject here',
-    'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
-    # 'from@example.com',
-    customer.caregiver_email, # ['to@example.com'],
-    fail_silently=False,
-)
+#     send_mail(
+#     'M-CHAT-R-F™️ Screening results',# 'Subject here',
+#     'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
+#     # 'from@example.com',
+#     customer.caregiver_email, # ['to@example.com'],
+#     fail_silently=False,
+# )
 
     return response
 
@@ -163,13 +183,13 @@ def download_file_mid(request):
     file = open(filepath.format(file_name), 'rb')
     response = HttpResponse(file, content_type='application/pdf')
     response['Content-Disposition'] = "attachment; filename={}".format(file_name)
-    send_mail(
-    'M-CHAT-R-F™️ Screening results',# 'Subject here',
-    'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
-    # 'from@example.com',
-    customer.caregiver_email, # ['to@example.com'],
-    fail_silently=False,
-)
+#     send_mail(
+#     'M-CHAT-R-F™️ Screening results',# 'Subject here',
+#     'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
+#     # 'from@example.com',
+#     customer.caregiver_email, # ['to@example.com'],
+#     fail_silently=False,
+# )
 
     return response
 
@@ -180,12 +200,12 @@ def download_file_hi(request):
     file = open(filepath.format(file_name), 'rb')
     response = HttpResponse(file, content_type='application/pdf')
     response['Content-Disposition'] = "attachment; filename={}".format(file_name)
-    send_mail(
-    'M-CHAT-R-F™️ Screening results',# 'Subject here',
-    'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
-    # 'from@example.com',
-    customer.caregiver_email, # ['to@example.com'],
-    fail_silently=False,
-)
+#     send_mail(
+#     'M-CHAT-R-F™️ Screening results',# 'Subject here',
+#     'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
+#     # 'from@example.com',
+#     customer.caregiver_email, # ['to@example.com'],
+#     fail_silently=False,
+# )
 
     return response
