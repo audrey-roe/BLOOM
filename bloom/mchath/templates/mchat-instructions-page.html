@@ -61,6 +61,7 @@
         animation-name: animatetop;
         animation-duration: 0.4s
         border-radius: 10px;
+        overflow: auto; 
 
       }
 
@@ -77,7 +78,7 @@
 
       /* The Close Button */
       .close {
-        color: white;
+        color: black;
         float: right;
         font-size: 28px;
         font-weight: bold;
@@ -459,83 +460,88 @@
   
   </head>
   <body>
-    <div>
-      <link href="/static/css/mchat-instructions-page.css" rel="stylesheet" />
+              <div>
+                <link href="/static/css/mchat-instructions-page.css" rel="stylesheet" />
 
-      <div class="mchat-instructions-page-container">
-        <div id="instructions" class="mchat-instructions-page-container1">
-          {% comment %} <div class="mchat-page-numbers-container">
-            <span class="mchat-page-numbers-text">
-              <span>Page 2 of 9</span>
-            </span>
-          </div> {% endcomment %}
-          <header
-            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name7" >
-            <a
-              href="https://thebloombuddy.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="mchat-header-link"
-            >
-              <span>< RETURN HOME</span>
-            </a>
-            <img
-              id="bloombuddy-logo"
-              alt="darklogotransparentstraightlineCopy3573"
-              src="/static/images/bloombuddy-logo.png"
-              loading="eager"
-              class="mchat-header-darklogotransparentstraightline-copy logo"
-            />
-          </header>
-          <form method="" action ="/registerPage/" enctype="multipart/form-data">
-            <h1 class="mchat-instructions-page-text">
-              <span>Instructions for Taking the</span>
-              <br class="h1" />
-              <span>M-CHAT-R™ autism test</span>
-            </h1>
-            <span class="mchat-instructions-page-text04"
-                  style= "text-align: justify">
-              The M-CHAT-R-F™️ is a developmental screening tool to assess the
-              risk of Autism Spectrum Disorder (ASD) for toddlers between the ages
-              of 16 and 30 months of age.Please answer these questions about your
-              child. Keep in mind how your child usually behaves. If you have seen
-              your child do the behavior a few times, but he or she does not
-              usually do it, then please answer no. Please circle yes or no for
-              every question. Thank you very much.
-            </span>
-            <h1 class="mchat-instructions-page-text05 h4">
-              <span>Privacy Policy</span>
-              <span class="mchat-instructions-page-text07">*</span>
-            </h1>
-            <div class="mchat-instructions-page-container2">
-              <input type="checkbox" id="checkbox-1" value="" required />
-              <span class="mchat-instructions-page-text08">
-                <span>I accept Bloom Buddy’s</span>
-                <label for="checkbox-1">
-                <a id="myBtn"
-                class="mchat-instructions-page-link">
-                  Privacy Policy.
-                </a>
-              </span>
-            </div>
-          </div>
+                <div class="mchat-instructions-page-container">
+                  <div id="instructions" class="mchat-instructions-page-container1">
+                      {% comment %} <div class="mchat-page-numbers-container">
+                        <span class="mchat-page-numbers-text">
+                          <span>Page 2 of 9</span>
+                        </span>
+                      </div> {% endcomment %}
+                      <header
+                        class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name7" >
+                        <a
+                          href="https://thebloombuddy.com"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          class="mchat-header-link"
+                        >
+                          <span>< RETURN HOME</span>
+                        </a>
+                        <img
+                          id="bloombuddy-logo"
+                          alt="darklogotransparentstraightlineCopy3573"
+                          src="/static/images/bloombuddy-logo.png"
+                          loading="eager"
+                          class="mchat-header-darklogotransparentstraightline-copy logo"
+                        />
+                      </header>
+                      <form method="" action ="/registerPage/" enctype="multipart/form-data">
+                      <h1 class="mchat-instructions-page-text">
+                        <span>Instructions for Taking the</span>
+                        <br class="h1" />
+                        <span>M-CHAT-R™ autism test</span>
+                      </h1>
+                      <span class="mchat-instructions-page-text04"
+                            style= "text-align: justify">
+                        The M-CHAT-R-F™️ is a developmental screening tool to assess the
+                        risk of Autism Spectrum Disorder (ASD) for toddlers between the ages
+                        of 16 and 30 months of age.Please answer these questions about your
+                        child. Keep in mind how your child usually behaves. If you have seen
+                        your child do the behavior a few times, but he or she does not
+                        usually do it, then please answer no. Please circle yes or no for
+                        every question. Thank you very much.
+                      </span>
+                      <h1 class="mchat-instructions-page-text05 h4">
+                        <span>Privacy Policy</span>
+                        <span class="mchat-instructions-page-text07">*</span>
+                      </h1>
+                      <div class="mchat-instructions-page-container2">
+                        <input type="checkbox" id="checkbox-1" value="" required />
+                        <span class="mchat-instructions-page-text08">
+                          <span>I accept Bloom Buddy’s</span>
+                          <a id="myBtn"
+                          class="mchat-instructions-page-link">
+                            Privacy Policy.
+                          </a>
+                        </span>
+                      </div>
+                      
   
-              <div id="myModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <span class="close"> &times;
-                    </span>
+                  <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <span class="close" > &times;
+                        </span>
                         <div class="modal-body">
                           
                           <h3 class="mt-0">BLOOM BUDDY GENERAL PRIVACY POLICY</h3>
+                          <br>
 
                           <p>Bloom Buddy Limited (“We”, “us” or “our”) is committed to ensuring that you are fully informed about how information collected through the Bloom Buddy Platform is processed and/or used by us. 
                           By using, visiting, receiving, or providing professional services on this Platform, you agree to the terms of this Privacy Policy. We strongly advise that you read this policy carefully to fully understand how information collected through the Platform is processed. If you do not agree with the terms of this Privacy Policy, please do not continue to use the Platform. Your use of our Platform and Services is also governed by the User Terms of Use or the Professional Terms and Conditions (collectively “Terms”) (link to terms and Conditions). Any undefined capitalised terms used within this Privacy Policy will have the same meaning in the Terms (link to terms and Conditions).
                           We will be the data controller of personal data provided to us by you or collected by us via our website. This means that we are responsible for deciding how we hold and use personal information about you. We are required to notify you of the information contained in this policy. Please read the following carefully to understand our views and practices regarding your personal data and how such personal data is treated. 
                           By using the Platform, you agree to the collection and use of information in accordance with this policy. </p>
                           <h4>
+                            <br>
+                            <br>
+
                           1.	The Personal Information We Receive From You</h4>
+                          <br>
+                        
                           <p>To enable us connect you with the Services on our Platform, we may require you to voluntarily give us access to certain personal information. You consent to us collecting your personal information as well as storing, using, or disclosing your personal information in accordance with this Privacy Policy. 
 
                           Personal information given to us by you includes but is not limited to:
@@ -551,8 +557,14 @@
                           c.	Financial Information:  Services on the Platform may be available for a fee. When users make payments for any Service, we collect your name, billing address, payment information, and other necessary information to verify your payment. If you wish, this information may be saved by us to process future payments.
                           Information such as your name, credit/debit card details, card authentication data, billing address and Zip code will be provided directly to our payment service provider. We do not collect or store any financial information you give to payment service providers. Such payment service providers will be solely responsible for your financial information or any payment management issues such as making refunds. We disclaim any responsibility or liability related to the payment service providers’ management of your financial information.
                           d.	Contact Information: In order to take necessary action after you have contacted us via the in-app chat, email, social media or phone calls, we may collect your phone number, email address or information already available to the public from your social media profile and any other information you have voluntarily offered.</p>
+                          <br>
+                          <br>
+
                           <h4> 
+                            
                           2.	Purposes for Processing Personal Information</h4>
+                          <br>
+
                           <p>The information you have provided to us and the information we have collected about you are primarily used to help us provide you with the Services you require from us. The information is also used to help us improve your interactions with our Platform. In addition to this, we also collect and process your information for the following purposes: 
                           a.	Matching your child with a Professional and facilitating Professional Services;
                           b.	Processing your application to join the team of Professionals providing Professional Services on the Platform.
@@ -570,8 +582,14 @@
                           n.	 Improving the quality of our businesses and improving the effectiveness and delivery of our Service and your experience with us.
 
                           We will only process your personal information in this way if you agree to us doing so. You may withdraw your consent at any time by contacting [].</p>
+                          <br>
+                            <br>
                           <h4>
+                            
+
                           3.	Change of Purpose</h4>
+                           <br>
+
                           <p>We will only use your personal information for the purposes for which we collected it. If we need to use your personal information for any other purpose, we will seek your consent to do so, we will not process your information for any other purpose if you refuse to consent. Where we have a legal basis for using your information for any other purpose, we will notify you and explain the legal basis which allows us to do so.</p>
 
                           <h4>4.	Disclosure of Personal Information</h4>
@@ -625,44 +643,39 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="mchat-instructions-page-container3">
+                    <!-- <a href="index.html" class="mchat-instructions-page-navlink">
+                      <div class="mchat-button-container">Previous</div>
+                    </a> -->
+                    {% comment %} <div class="mchat-button-container"> {% endcomment %}
+                      
+                        
+                          <a href="/mchat" class="mchat-button-navlink">
+                            <span>Previous</span>
+                          </a>
+                        
+                        {% comment %} <a
+                        href="/registerPage"
+                        class="mchat-instructions-page-navlink1"
+                      > </a>               {% endcomment %}
+                        <a href="/registerPage/">
+                          <button class="mchat-button-navlink" type="submit">
+                            <span>Next</span>
+                          </button>
+                        </a>
+                    {% comment %} </div> {% endcomment %}
+                    <div class="copyright">
+                      <span class="mchat-instructions-page-text11">
+                        © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
+                      </span>
+                    </div>
+                  </form>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="mchat-instructions-page-container3">
-              <!-- <a href="index.html" class="mchat-instructions-page-navlink">
-                <div class="mchat-button-container">Previous</div>
-              </a> -->
-              {% comment %} <div class="mchat-button-container"> {% endcomment %}
-                
-                  
-                    <a href="/mchat" class="mchat-button-navlink">
-                      <span>Previous</span>
-                    </a>
-                  
-                  {% comment %} <a
-                  href="/registerPage"
-                  class="mchat-instructions-page-navlink1"
-                > </a>               {% endcomment %}
-                  <a href="/registerPage/">
-                    <button class="mchat-button-navlink" type="submit">
-                      <span>Next</span>
-                    </button>
-                  </a>
-              </div>
-              <div class="copyright">
-                <span class="mchat-instructions-page-text11">
-                  © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
-                </span>
-              </div>
-            </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      </div>
       
-    </div>
+      
     <script>
     // Get the modal
     var modal = document.getElementById("myModal");
