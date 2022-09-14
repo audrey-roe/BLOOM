@@ -3,15 +3,15 @@ import json
 
 import torch
 
-from models import NeuralNetwork
-from nltk_utilities import bag_of_words, tokenize
+from bbchatbot.models import NeuralNetwork
+from bbchatbot.nltk_utilities import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('intents.json', 'r') as json_data:
+with open('bbchatbot/intents.json', 'r') as json_data:
     intents = json.load(json_data)
 
-FILE = "data.pth"
+FILE = "bbchatbot/data.pth"
 data = torch.load(FILE)
 
 input_size = data["input_size"]
