@@ -16,7 +16,9 @@ def index_get(request):
 @csrf_exempt
 def predict(request):
     # if request.method == 'POST':
-        text = request.get_json().get("message")
+        # text = request.get_json().get("message")
+        data = json.loads(request.body)
+        text = data['message']
 
         # text = request.POST.get('message')
         response = get_response(text)
@@ -34,9 +36,9 @@ def predict(request):
        
         # return render(request, message)
 
-def predict(request):
-    text = request.get_json().get("message")
+# def predict(request):
+#     text = request.get_json().get("message")
 
-    response = get_response(text)
-    message = {"answer":response}
-    return jsonify(message)
+#     response = get_response(text)
+#     message = {"answer":response}
+#     return jsonify(message)

@@ -19,7 +19,7 @@
     },
     {
         "tag":"name",
-        "patterns":[""],
+        "patterns":["what is your name"],
         "responses":["sorry,i didn't understand you","please give me some more info","not sure i understand that"],
         "context":[""]
     },
@@ -31,7 +31,7 @@
     },
     {
         "tag":"age",
-        "patterns":["how old","what is your age?","age"],
+        "patterns":["how old","what is your age?","age", "how old are you?"],
         "responses":["I am as old time","hey!","I am as old as this site you have been working on!"],
         "context":[""]
     },
@@ -43,7 +43,7 @@
     },
     {
     "tag":"Autism symptoms",
-    "patterns":["How do i know someone that has autism?"," How do i know if someone is austic?", "what are the symptoms of autism?"],
+    "patterns":["How do i know someone that has autism?","autism", "autistic"," How do i know if someone is austic?", "what are the symptoms of autism?"],
     "responses":["To get a proper diagnosis, please make sure to use our Diagonistics tool to talk to an expert. However some examples of symptoms you'll likely find someone with autism exhibiting are: hyperactive or high energy, low attention, low concerntration, lack of concerntration,Not responding to name,Avoid eye contact,Non-verbal,Repetitive movements, Does not talk,Restrictive conversations,Delayed language skills,congnitive delay,Tantrums,Meltdowns,spinning,repeating the same phrases,spining objects,Arranging objects in line,obssessive intrests,flappinghands,flicking fingers,Rocking body,Anxiety in public places plats alone, food aversions,sensitive to smell,sensitive to ight,sensitive to sounds,not interacting with other children"],
     
     "context":[""]
