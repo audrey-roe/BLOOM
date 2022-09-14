@@ -53,57 +53,88 @@
 
       <div class="mchat-results-page-container">
         <div id="low-risk-result" class="mchat-results-page-container1 result" >
-          <header
-            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name4"
+          <div  class= "restart-quiz"
+                style= "display:flex;
+                        flex-direction: row;
+                        justify-items:space-between;
+                        color:#9747ff;
+                        font-family: 'Playfair Display', sans-serif; 
+                        font-weight: 600;
+                        text-align: right">
+        <a
+          href="https://thebloombuddy.com"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="mchat-header-link"
+          style= "width:50%;
+                  text-align: left">
+            <span>< RETURN HOME</span>
+        </a>
+        <a  href="/quizz/"
+            style= "display: flex;     
+                    align-content:center;
+                    justify-content: flex-end;
+                    align-items:center;
+                    justify-items:center;
+                    width:50%;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
+            style="width:5%; height:auto"><path fill="#9747ff" d="M12.5,21A7.5,7.5,0,0,1,6.713,8.729a.5.5,0,1,1,.771.637A6.5,6.5,0,1,0,12.5,7h-3a.5.5,0,0,1,0-1h3a7.5,7.5,0,0,1,0,15Z"/><path fill="#9747ff" d="M11.5,9a.5.5,0,0,1-.354-.146l-2-2a.5.5,0,0,1,.708-.708l2,2A.5.5,0,0,1,11.5,9Z"/><path fill="#9747ff" d="M9.5,7a.5.5,0,0,1-.354-.854l2-2a.5.5,0,0,1,.708.708l-2,2A.5.5,0,0,1,9.5,7Z"/></svg>
+            <span>
+              START OVER
+            </span>
+        </a>
+    </div>
+    <header
+      class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name16"
+      style="padding-inline: 16px;">
+      {% comment %} <a
+        href="https://thebloombuddy.com"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="mchat-header-link"
+      >
+        <span>< RETURN HOME</span>
+      </a> {% endcomment %}
+      <img
+        id="bloombuddy-logo"
+        alt="darklogotransparentstraightlineCopy3573"
+        src="/static/images/bloombuddy-logo.png"
+        loading="eager"
+        class="mchat-header-darklogotransparentstraightline-copy logo"
+      />
+    </header>
+        <svg
+          viewBox="0 0 1024 1024"
+          class="mchat-results-page-icon success-icon"
+        >
+          <path d="M864 128l-480 480-224-224-160 160 384 384 640-640z"></path>
+        </svg>
+        <h1 class="mchat-results-page-text h2">
+          <span>RESULT:</span>
+          <span class="mchat-results-page-text02">LOW RISK</span>
+          <br />
+          <span>(M-CHAT-R-SCORE:0-2)</span>
+          <br />
+        </h1>
+        <span class="mchat-results-page-text06">
+          Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism
+          Spectrum Disorder. If your child is younger than 24 months, screen
+          again after second birthday or at future well-child visits. No
+          further action required unless surveillance indicates risk for ASD.
+        </span>
+        <span class="mchat-results-page-text07">
+          <span>You may book an appointment to</span>
+          <a
+            href="https://www.thebloombuddy.com/coming-soon1.html"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="mchat-results-page-link"
           >
-            <a
-              href="https://thebloombuddy.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="mchat-header-link"
-            >
-              <span>< RETURN HOME</span>
-            </a>
-            <img
-              id="bloombuddy-logo"
-              alt="darklogotransparentstraightlineCopy3573"
-              src="/static/images/bloombuddy-logo.png"
-              loading="eager"
-              class="mchat-header-darklogotransparentstraightline-copy logo"
-            />
-          </header>
-          <svg
-            viewBox="0 0 1024 1024"
-            class="mchat-results-page-icon success-icon"
-          >
-            <path d="M864 128l-480 480-224-224-160 160 384 384 640-640z"></path>
-          </svg>
-          <h1 class="mchat-results-page-text h2">
-            <span>RESULT:</span>
-            <span class="mchat-results-page-text02">LOW RISK</span>
-            <br />
-            <span>(M-CHAT-R-SCORE:0-2)</span>
-            <br />
-          </h1>
-          <span class="mchat-results-page-text06">
-            Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism
-            Spectrum Disorder. If your child is younger than 24 months, screen
-            again after second birthday or at future well-child visits. No
-            further action required unless surveillance indicates risk for ASD.
-          </span>
-          <span class="mchat-results-page-text07">
-            <span>You may book an appointment to</span>
-            <a
-              href="https://www.thebloombuddy.com/coming-soon1.html"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="mchat-results-page-link"
-            >
-              see a Specialist
-            </a>
-            <span></span>
-            <span>if you still have any cause for concerns</span>
-          </span>
+            see a Specialist
+          </a>
+          <span></span>
+          <span>if you still have any cause for concerns</span>
+        </span>
           <a class="mchat-results-page-button" href = "/download_file_low/"  filename=''>
             DOWNLOAD PDF
         </a>
@@ -112,25 +143,56 @@
           </span>
         </div>
         <div id="medium-risk-result" class="mchat-results-page-container2 result">
-          <header
-            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name15"
-          >
-            <a
-              href="https://thebloombuddy.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="mchat-header-link"
-            >
-              <span>< RETURN HOME</span>
-            </a>
-            <img
-              id="bloombuddy-logo"
-              alt="darklogotransparentstraightlineCopy3573"
-              src="/static/images/bloombuddy-logo.png"
-              loading="eager"
-              class="mchat-header-darklogotransparentstraightline-copy logo"
-            />
-          </header>
+          <div  class= "restart-quiz"
+          style= "display:flex;
+                  flex-direction: row;
+                  justify-items:space-between;
+                  color:#9747ff;
+                  font-family: 'Playfair Display', sans-serif; 
+                  font-weight: 600;
+                  text-align: right">
+        <a
+          href="https://thebloombuddy.com"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="mchat-header-link"
+          style= "width:50%;
+                  text-align: left">
+            <span>< RETURN HOME</span>
+        </a>
+        <a  href="/quizz/"
+            style= "display: flex;     
+                    align-content:center;
+                    justify-content: flex-end;
+                    align-items:center;
+                    justify-items:center;
+                    width:50%;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
+            style="width:5%; height:auto"><path fill="#9747ff" d="M12.5,21A7.5,7.5,0,0,1,6.713,8.729a.5.5,0,1,1,.771.637A6.5,6.5,0,1,0,12.5,7h-3a.5.5,0,0,1,0-1h3a7.5,7.5,0,0,1,0,15Z"/><path fill="#9747ff" d="M11.5,9a.5.5,0,0,1-.354-.146l-2-2a.5.5,0,0,1,.708-.708l2,2A.5.5,0,0,1,11.5,9Z"/><path fill="#9747ff" d="M9.5,7a.5.5,0,0,1-.354-.854l2-2a.5.5,0,0,1,.708.708l-2,2A.5.5,0,0,1,9.5,7Z"/></svg>
+            <span>
+              START OVER
+            </span>
+         </a>
+    </div>
+    <header
+      class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name16"
+      style="padding-inline: 16px;">
+      {% comment %} <a
+        href="https://thebloombuddy.com"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="mchat-header-link"
+      >
+        <span>< RETURN HOME</span>
+      </a> {% endcomment %}
+      <img
+        id="bloombuddy-logo"
+        alt="darklogotransparentstraightlineCopy3573"
+        src="/static/images/bloombuddy-logo.png"
+        loading="eager"
+        class="mchat-header-darklogotransparentstraightline-copy logo"
+      />
+    </header>
           <svg
             viewBox="0 0 1024 1024"
             class="mchat-results-page-icon2 success-icon"
@@ -163,7 +225,7 @@
             <span>Your child&apos;s intervention starts here.</span>
             <br class="mchat-results-page-text25" />
             <span></span>
-            <span class="mchat-results-page-text27">Book an appointment</span>
+            <a href="https://thebloombuddy.com/coming-soon1.html" class="mchat-results-page-text27">Book an appointment</a>
             <span>with a Pediatrician and other Specialists</span>
           </span>
           <a class="mchat-results-page-button" href = "/download_file_mid/"  filename=''>
@@ -174,17 +236,48 @@
           </span>
         </div>
         <div id="high-risk-result" class="mchat-results-page-container3 result">
+          <div  class= "restart-quiz"
+                style= "display:flex;
+                        flex-direction: row;
+                        justify-items:space-between;
+                        color:#9747ff;
+                        font-family: 'Playfair Display', sans-serif; 
+                        font-weight: 600;
+                        text-align: right">
+              <a
+                href="https://thebloombuddy.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="mchat-header-link"
+                style= "width:50%;
+                        text-align: left">
+                  <span>< RETURN HOME</span>
+              </a>
+              <a  href="/quizz/"
+                  style= "display: flex;     
+                          align-content:center;
+                          justify-content: flex-end;
+                          align-items:center;
+                          justify-items:center;
+                          width:50%;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
+                  style="width:5%; height:auto"><path fill="#9747ff" d="M12.5,21A7.5,7.5,0,0,1,6.713,8.729a.5.5,0,1,1,.771.637A6.5,6.5,0,1,0,12.5,7h-3a.5.5,0,0,1,0-1h3a7.5,7.5,0,0,1,0,15Z"/><path fill="#9747ff" d="M11.5,9a.5.5,0,0,1-.354-.146l-2-2a.5.5,0,0,1,.708-.708l2,2A.5.5,0,0,1,11.5,9Z"/><path fill="#9747ff" d="M9.5,7a.5.5,0,0,1-.354-.854l2-2a.5.5,0,0,1,.708.708l-2,2A.5.5,0,0,1,9.5,7Z"/></svg>
+                  <span>
+                    START OVER
+                  </span>
+               </a>
+          </div>
           <header
             class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name16"
-          >
-            <a
+            style="padding-inline: 16px;">
+            {% comment %} <a
               href="https://thebloombuddy.com"
               target="_blank"
               rel="noreferrer noopener"
               class="mchat-header-link"
             >
               <span>< RETURN HOME</span>
-            </a>
+            </a> {% endcomment %}
             <img
               id="bloombuddy-logo"
               alt="darklogotransparentstraightlineCopy3573"
@@ -216,7 +309,7 @@
             <span>Your child&apos;s intervention starts here.</span>
             <br class="mchat-results-page-text39" />
             <span></span>
-            <span class="mchat-results-page-text41">Book an appointment</span>
+            <a href="https://thebloombuddy.com/coming-soon1.html" class="mchat-results-page-text41">Book an appointment</a>
             <span>with a Pediatrician and other Specialists</span>
           </span>
           <a class="mchat-results-page-button" href = "/download_file_hi/"  filename=''>
