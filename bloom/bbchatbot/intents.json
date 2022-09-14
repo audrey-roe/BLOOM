@@ -25,7 +25,7 @@
     },
     {
         "tag":"goodbye",
-        "patterns":["cya","seeyoulater","goodbye","have a good day","bye","cao","see ya"],
+        "patterns":["cya","see you later","goodbye","have a good day","bye","cao","see ya"],
         "responses":["have a nice day","goodbye"],
         "context":[""]
     },
@@ -38,7 +38,7 @@
     {
         "tag" : "name",
         "patterns":["what is your name","what should i call you","what's your name?","who are you?","can you tell me your name"],
-        "responses":["you can call me BloomBuddy!","i am BloomBuddy!","I am BloomBuddy,your medical assitant"],
+        "responses":["you can call me Bloom!","I am Bloom!","I am Bloom, your medical assitant"],
         "context":[""]
     },
     {
