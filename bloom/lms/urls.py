@@ -9,7 +9,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('', views.home, name='home'),
     #Custom admin panel urls
-    
+
     path('webadmin/', views.webadmin, name='webadmin'),
     path('addpost/', views.add_post, name='addpost'),
     path('addcat/', views.add_cat, name='addcat'),
@@ -117,4 +117,5 @@ urlpatterns = [
     path('allcourses/', views.totalposts, name='all-courses'), 
 
     # url(r'^getSubcategory/$', views.get_subcategory)           
-    ]  + static(settings.S90-=TATIC_URL, document_root=settings.STATIC_ROOT)
+    ]  
+    # + static(settings.S90-=TATIC_URL, document_root=settings.STATIC_ROOT)
