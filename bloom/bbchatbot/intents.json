@@ -18,12 +18,6 @@
         "context":[""]
     },
     {
-        "tag":"name",
-        "patterns":["what is your name"],
-        "responses":["sorry,i didn't understand you","please give me some more info","not sure i understand that"],
-        "context":[""]
-    },
-    {
         "tag":"goodbye",
         "patterns":["cya","see you later","goodbye","have a good day","bye","ciao","see ya"],
         "responses":["Have a nice day","Goodbye"],
@@ -49,8 +43,8 @@
     },
     {
         "tag":"consultation",
-        "patterns":["can i book an appointment?","is there some i can talk to?","i need help","is there any specialist avaliable?","can you suggest a specialist for consultation?","can you suggest a doctor for consultation?","can you setup a meeting with a specialist for me?,is there any specialist for consultation", "who can i consult?"],
-        "responses":["Let's get you started by screening your child: https://www.thebloombuddy.com/ coming soon"],
+        "patterns":["can i book an appointment?","is there some i can talk to?","i need help","is there any specialist avaliable?","can you suggest a specialist for consultation?","can you suggest a doctor for consultation?","can you setup a meeting with a specialist for me?","i need to book an appointment","is there any specialist for consultation", "who can i consult?"],
+        "responses":["Let's get you started by screening your child: www.thebloombuddy.com/ coming soon"],
         "context":[""]
     }
     ]
