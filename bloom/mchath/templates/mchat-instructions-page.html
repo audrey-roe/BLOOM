@@ -2,7 +2,7 @@
 
 <html lang="english">
   <head>
-    <title>M-CHAT-R™ INSTRUCTIONS</title>
+    <title>M-CHAT-R™ SURVEY</title>
     <meta
       property="og:title"
       content="mchat-instructions-page - exported project"
@@ -31,6 +31,417 @@
         background-color: var(--dl-color-gray-white);
 
       }
+
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 55%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+        border-radius: 10px;
+        overflow: auto; 
+
+      }
+
+      /* Add Animation */
+      @-webkit-keyframes animatetop {
+        from {top:-300px; opacity:0} 
+        to {top:0; opacity:1}
+      }
+
+      @keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+      }
+
+      /* The Close Button */
+      .close {
+        color: black;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .modal-header {
+        padding: 30px 16px;
+        background-color: #rgb(0,0,0;
+        color: var(--dl-color-gray-black);
+        border-radius: 10px;
+        border-radius: 10px;
+
+
+      }
+
+      .modal-body {padding: 2px 16px;
+        border-radius: 10px;
+      }
+
+      .modal-footer {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+      }
+
+      .mchat-page-numbers-container {
+        display: flex;
+        position: relative;
+      }
+    
+      .mchat-page-numbers-text {
+          width: 600px;
+          font-size: 0.8em;
+          text-align: right;
+          padding-right: var(--dl-space-space-twounits);
+      }
+      
+      .mchat-header-h-e-a-d-e-r {
+          position: relative;
+          margin-top: 0px;
+          margin-bottom: var(--dl-space-space-twounits);
+          padding-right: 25px;
+          justify-content: space-between;
+      }
+      
+      .mchat-header-link {
+          cursor: pointer;
+          font-style: normal;
+          transition: 0.3s;
+          font-family: Playfair Display;
+          font-weight: 700;
+          {% comment %} margin-left: -25px; {% endcomment %}
+          text-decoration: none;
+      }
+      
+      .mchat-header-link:hover {
+          color: var(--dl-color-pinks-100);
+          font-size: 1rem;
+      }
+      
+      .mchat-header-darklogotransparentstraightline-copy {
+          width: auto;
+          height: 80%;
+      }
+      
+      .mchat-header-root-class-name {
+          align-self: flex-start;
+      }
+      
+      .mchat-header-root-class-name1 {
+          align-self: flex-start;
+      }
+      
+      .mchat-header-root-class-name2 {
+          align-self: flex-start;
+      }
+      
+      .mchat-header-root-class-name3 {
+          align-self: flex-start;
+      }
+      
+      .mchat-header-root-class-name5 {
+          display: none;
+          align-self: flex-start;
+      }
+      
+      .mchat-header-root-class-name6 {
+          align-self: flex-start;
+          margin-bottom: var(--dl-space-space-unit);
+      }
+      
+      .mchat-header-root-class-name7 {
+          align-self: flex-start;
+      }
+      
+      .mchat-header-root-class-name8 {
+          align-self: flex-start;
+      }
+      
+      .mchat-header-root-class-name9 {
+          align-self: flex-start;
+          margin-left: var(--dl-space-space-unit);
+      }
+      
+      .mchat-header-root-class-name10 {
+          align-self: flex-start;
+          margin-left: var(--dl-space-space-unit);
+      }
+      
+      .mchat-header-root-class-name11 {
+          align-self: flex-start;
+          margin-left: var(--dl-space-space-unit);
+      }
+      
+      .mchat-header-root-class-name12 {
+          align-self: flex-start;
+          margin-left: var(--dl-space-space-unit);
+      }
+      
+      .mchat-header-root-class-name13 {
+          align-self: flex-start;
+          margin-left: var(--dl-space-space-unit);
+      }
+      
+      .mchat-header-root-class-name14 {
+          align-self: flex-start;
+          margin-left: var(--dl-space-space-unit);
+      }
+      
+      .mchat-header-root-class-name4 {
+          align-self: flex-start;
+      }
+      
+      .mchat-header-root-class-name15 {
+          align-self: flex-start;
+      }
+      
+      .mchat-header-root-class-name16 {
+          align-self: flex-start;
+      }
+      
+      @media(max-width: 481px) {
+          .mchat-header-h-e-a-d-e-r {
+              margin-top: 0px;
+              align-items: center;
+              justify-content: space-between;
+          }
+          .mchat-header-link {
+              font-size: 0.7rem;
+          }
+          .mchat-header-darklogotransparentstraightline-copy {
+              right: 1px;
+              width: 150px;
+          }
+      }
+      
+      .mchat-button-container {
+          display: flex;
+          position: relative;
+      }
+      
+      .mchat-button-navlink {
+          color: var(--dl-color-gray-white);
+          width: 11.875rem;
+          cursor: pointer;
+          position: relative;
+          font-size: 1em;
+          align-self: center;
+          box-shadow: 5px 5px 10px 0px #d4d4d4;
+          margin-top: 0px;
+          text-align: center;
+          transition: 0.3s;
+          font-family: Poppins;
+          font-weight: 400;
+          line-height: 1.15;
+          padding-top: 0.75rem;
+          border-width: 0px;
+          border-radius: 10px;
+          padding-bottom: 0.75rem;
+          text-transform: none;
+          text-decoration: none;
+          background-color: #6c40d2;
+      }
+      
+      .mchat-button-navlink:hover {
+          background-color: var(--dl-color-purples-300);
+      }
+      
+      @media(max-width: 481px) {
+          .mchat-button-navlink {
+              color: var(--dl-color-gray-white);
+              width: 9rem;
+              font-style: normal;
+              font-weight: 500;
+              background-color: var(--dl-color-purples-100);
+          }
+      }
+      
+      form {
+          padding: 0 var(--dl-space-space-unit);
+      }
+      
+      .mchat-instructions-page-container {
+          width: 100%;
+          display: flex;
+          overflow: auto;
+          min-height: 100vh;
+          align-items: center;
+          padding-top: var(--dl-space-space-twounits);
+          flex-direction: column;
+      }
+      
+      .mchat-instructions-page-container1 {
+          width: 600px;
+          height: auto;
+          display: flex;
+          align-self: center;
+          box-shadow: 0px 5px 10px 3px rgba(229, 218, 255, 0.63);
+          margin-top: var(--dl-space-space-oneandhalfunits);
+          align-items: center;
+          padding-top: var(--dl-space-space-twounits);
+          padding-left: var(--dl-space-space-unit);
+          border-radius: 10px;
+          margin-bottom: var(--dl-space-space-threeunits);
+          padding-right: var(--dl-space-space-unit);
+          flex-direction: column;
+          padding-bottom: var(--dl-space-space-twounits);
+          justify-content: center;
+      }
+      
+      .mchat-instructions-page-text {
+          font-size: 2em;
+          font-family: Playfair Display;
+          font-weight: 700;
+          line-height: 1.15;
+          text-transform: none;
+          text-decoration: none;
+          align-self: center;
+          text-align: center;
+          padding-bottom: 24px;
+      }
+      
+      
+      /* .mchat-instructions-page-text04 {
+        margin-top: var(--dl-space-space-twounits);
+        padding-left: var(--dl-space-space-oneandhalfunits);
+        padding-right: var(--dl-space-space-oneandhalfunits);
+      } */
+      
+      .mchat-instructions-page-text05 {
+          align-self: flex-start;
+          margin-top: var(--dl-space-space-twounits);
+          padding-bottom: 1.5px;
+          /* margin-left: var(--dl-space-space-oneandhalfunits); */
+      }
+      
+      .mchat-instructions-page-text07 {
+          color: #ff0000;
+      }
+      
+      .mchat-instructions-page-container2 {
+          flex: 0 0 auto;
+          width: auto;
+          height: auto;
+          display: flex;
+          align-self: flex-start;
+          /* align-items: center; */
+          /* margin-left: var(--dl-space-space-oneandhalfunits); */
+          /* justify-content: center; */
+      }
+      
+      .mchat-instructions-page-text08 {
+          font-size: 0.9rem;
+          margin-left: 1vw;
+      }
+      
+      .mchat-instructions-page-link {
+          color: #1800ff;
+          text-decoration: underline;
+      }
+      
+      .mchat-instructions-page-text10 {
+          color: #1800ff;
+          text-decoration: underline;
+      }
+      
+      .mchat-instructions-page-container3 {
+          width: 100%;
+          display: flex;
+          margin-top: var(--dl-space-space-threeunits);
+          margin-bottom: var(--dl-space-space-unit);
+          align-items: center;
+          /* padding-left: var(--dl-space-space-oneandhalfunits);
+          padding-right: var(--dl-space-space-oneandhalfunits); */
+          flex-direction: row;
+          justify-content: space-between;
+      }
+      
+      .mchat-instructions-page-navlink {
+          display: contents;
+      }
+      
+      .mchat-instructions-page-component2 {
+          text-decoration: none;
+      }
+      
+      .mchat-instructions-page-navlink1 {
+          display: contents;
+      }
+      
+      .mchat-instructions-page-component3 {
+          text-decoration: none;
+      }
+      
+      .mchat-instructions-page-text11 {
+          font-size: 0.7rem;
+          align-self: center;
+          width: 100%;
+          text-align: center;
+      }
+      
+      .copyright {
+          display: flex;
+          align-items: center;
+          align-content: center;
+          justify-items: center;
+          justify-content: center;
+      }
+      
+      @media(max-width: 481px) {
+          .mchat-instructions-page-container1 {
+            width: 100%;
+            padding: var(--dl-space-space-unit);
+            margin: 0%;
+            box-shadow: none;
+          }
+          .mchat-instructions-page-text {
+              font-size: 1.4em;
+              text-align: center;
+          }
+          .mchat-instructions-page-text04 {
+          margin-top: var(--dl-space-space-unit);
+          text-align: justify;
+          } 
+          .mchat-instructions-page-text05 {
+              margin-top: var(--dl-space-space-unit);
+          }
+          .mchat-instructions-page-container3 {
+              margin-top: var(--dl-space-space-twounits);
+              padding-left: 0px;
+              padding-right: 0px;
+          }
+          .mchat-instructions-page-text11 {
+              font-size: 0.5rem;
+          }
+      }
     </style>
     <link
       rel="stylesheet"
@@ -43,7 +454,9 @@
       data-tag="font"
     />
 
-    <link rel="stylesheet" href="./static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+  
+  
   </head>
   <body>
     <div>
@@ -51,14 +464,13 @@
 
       <div class="mchat-instructions-page-container">
         <div id="instructions" class="mchat-instructions-page-container1">
-          <div class="mchat-page-numbers-container">
+          {% comment %} <div class="mchat-page-numbers-container">
             <span class="mchat-page-numbers-text">
               <span>Page 2 of 9</span>
             </span>
-          </div>
+          </div> {% endcomment %}
           <header
-            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name7"
-          >
+            class="mchat-header-h-e-a-d-e-r mchat-header mchat-header-root-class-name7" >
             <a
               href="https://thebloombuddy.com"
               target="_blank"
@@ -75,64 +487,256 @@
               class="mchat-header-darklogotransparentstraightline-copy logo"
             />
           </header>
-          <h1 class="mchat-instructions-page-text">
-            <span>Instructions for Taking the</span>
-            <br class="h1" />
-            <span>M-CHAT-R™ autism test</span>
-          </h1>
-          <span class="mchat-instructions-page-text04">
-            The M-CHAT-R-F™️ is a developmental screening tool to assess the
-            risk of Autism Spectrum Disorder (ASD) for toddlers between the ages
-            of 16 and 30 months of age.Please answer these questions about your
-            child. Keep in mind how your child usually behaves. If you have seen
-            your child do the behavior a few times, but he or she does not
-            usually do it, then please answer no. Please circle yes or no for
-            every question. Thank you very much.
-          </span>
-          <h1 class="mchat-instructions-page-text05 h4">
-            <span>Privacy Policy</span>
-            <span class="mchat-instructions-page-text07">*</span>
-          </h1>
-          <div class="mchat-instructions-page-container2">
-            <input type="checkbox" checked="true" />
-            <span class="mchat-instructions-page-text08">
-              <span>I accept Bloom Buddy’s</span>
-              <a
-                href="https://thebloombuddy.com/privacy-policy.html"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="mchat-instructions-page-link"
-              >
-                Privacy Policy
-              </a>
-              <span class="mchat-instructions-page-text10">.</span>
+          <form method="" action ="/registerPage/" enctype="multipart/form-data">
+            <h1 class="mchat-instructions-page-text">
+              <span>Instructions for Taking the</span>
+              <br class="h1" />
+              <span>M-CHAT-R™ autism test</span>
+            </h1>
+            <span class="mchat-instructions-page-text04"
+                  style= "text-align: justify">
+              The M-CHAT-R-F™️ is a developmental screening tool to assess the
+              risk of Autism Spectrum Disorder (ASD) for toddlers between the ages
+              of 16 and 30 months of age.Please answer these questions about your
+              child. Keep in mind how your child usually behaves. If you have seen
+              your child do the behavior a few times, but he or she does not
+              usually do it, then please answer no. Please circle yes or no for
+              every question. Thank you very much.
             </span>
-          </div>
-          <div class="mchat-instructions-page-container3">
-            <!-- <a href="index.html" class="mchat-instructions-page-navlink">
-              <div class="mchat-button-container">Previous</div>
-            </a> -->
-            <a href="mchat-instructions-page.html" class="mchat-button-navlink">
-              <span>Previous</span>
-            </a>
+            <h1 class="mchat-instructions-page-text05 h4">
+              <span>Privacy Policy</span>
+              <span class="mchat-instructions-page-text07">*</span>
+            </h1>
+            <div class="mchat-instructions-page-container2">
+              <input type="checkbox" value="" required />
+              <span class="mchat-instructions-page-text08">
+                <span>I accept Bloom Buddy’s</span>
+                <a
+                id="myBtn"
+                class="mchat-instructions-page-link"
+                  class="mchat-instructions-page-link"
+                >
+                  Privacy Policy
+                </a>
+                <span class="mchat-instructions-page-text10">.</span>
+              </span>
+            </div>
 
-            <a
-              href="info-form-page.html"
-              class="mchat-instructions-page-navlink1"
-            >
-              <div class="mchat-button-container"></div>
-            </a>
-            <a href="#" class="mchat-button-navlink">
-              <span>Next</span>
-            </a>
-          </div>
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close" > &times;
+                  </span>
+                  <div class="modal-body">
+                    
+                    <h3 class="mt-0">BLOOM BUDDY GENERAL PRIVACY POLICY</h3>
+                    <br>
 
-           
+                    <p>Bloom Buddy Limited (“We”, “us” or “our”) is committed to ensuring that you are fully informed about how information collected through the Bloom Buddy Platform is processed and/or used by us. 
+                    By using, visiting, receiving, or providing professional services on this Platform, you agree to the terms of this Privacy Policy. We strongly advise that you read this policy carefully to fully understand how information collected through the Platform is processed. If you do not agree with the terms of this Privacy Policy, please do not continue to use the Platform. Your use of our Platform and Services is also governed by the User Terms of Use or the Professional Terms and Conditions (collectively “Terms”) (link to terms and Conditions). Any undefined capitalised terms used within this Privacy Policy will have the same meaning in the Terms (link to terms and Conditions).
+                    We will be the data controller of personal data provided to us by you or collected by us via our website. This means that we are responsible for deciding how we hold and use personal information about you. We are required to notify you of the information contained in this policy. Please read the following carefully to understand our views and practices regarding your personal data and how such personal data is treated. 
+                    By using the Platform, you agree to the collection and use of information in accordance with this policy. </p>
+                    <h4>
+                      <br>
+                      <br>
+
+                    1.	The Personal Information We Receive From You</h4>
+                    <br>
+                  
+                    <p>To enable us connect you with the Services on our Platform, we may require you to voluntarily give us access to certain personal information. You consent to us collecting your personal information as well as storing, using, or disclosing your personal information in accordance with this Privacy Policy. 
+
+                    Personal information given to us by you includes but is not limited to:
+
+                    a.	Registration and Onboarding: During the process of registration and onboarding on our Platform, you may voluntarily provide us with personal information including:
+                    For Professionals:
+                    Full name, gender, age, email address, phone numbers, address, calendar availability, session pricing information, profile photo, biographical information, geographic location, treatment areas and therapeutic approach, governing body membership information and membership number, means of identification.
+                    For Parent/Caretakers:
+                    Full name, phone number, email address, date of birth, means of identification, geographic	 location, billing, and payment information
+                    For Children:
+                    Full name, gender, date of birth, phone number, location, parent’s email which we will use to obtain consent to process the information of children. We may also collect sensitive personal data including health information such as blood group, genotype, health history and previous diagnosis. 
+                    b.	Newsletters: You may subscribe to our newsletter by providing us with your name and email address.
+                    c.	Financial Information:  Services on the Platform may be available for a fee. When users make payments for any Service, we collect your name, billing address, payment information, and other necessary information to verify your payment. If you wish, this information may be saved by us to process future payments.
+                    Information such as your name, credit/debit card details, card authentication data, billing address and Zip code will be provided directly to our payment service provider. We do not collect or store any financial information you give to payment service providers. Such payment service providers will be solely responsible for your financial information or any payment management issues such as making refunds. We disclaim any responsibility or liability related to the payment service providers’ management of your financial information.
+                    d.	Contact Information: In order to take necessary action after you have contacted us via the in-app chat, email, social media or phone calls, we may collect your phone number, email address or information already available to the public from your social media profile and any other information you have voluntarily offered.</p>
+                    <br>
+                    <br>
+
+                    <h4> 
+                      
+                    2.	Purposes for Processing Personal Information</h4>
+                    <br>
+
+                    <p>The information you have provided to us and the information we have collected about you are primarily used to help us provide you with the Services you require from us. The information is also used to help us improve your interactions with our Platform. In addition to this, we also collect and process your information for the following purposes: 
+                    a.	Matching your child with a Professional and facilitating Professional Services;
+                    b.	Processing your application to join the team of Professionals providing Professional Services on the Platform.
+                    c.	Aiding a diagnosis 
+                    d.	Reaching out to you, either ourselves or using the appropriate authorities, if we have good reason to believe that you or your child or a Professional may be in danger or maybe the cause or the victim of a criminal act;
+                    e.	Updating and enhancing our health records and data;
+                    f.	Creating and maintaining continued use of your account on the Platform;
+                    g.	Managing your account, providing you with customer support, and ensuring you are receiving quality service;
+                    h.	Executing your request for Services and confirmation of payment for requested Services;
+                    i.	Establishing your identity and assessing applications for our Services;
+                    j.	Personalize your Platform experience to deliver content and product and service offerings relevant to your interests, including targeted offers and ads through our websites, third-party sites, and via email or text message (with your consent, where required by law).
+                    k.	Contacting you and providing you with information, alerts and suggestions related to our products and services;
+                    l.	Scheduling an appointment;
+                    m.	Resolving/investigating a conflict or complaint about harassment on the Platform;
+                    n.	 Improving the quality of our businesses and improving the effectiveness and delivery of our Service and your experience with us.
+
+                    We will only process your personal information in this way if you agree to us doing so. You may withdraw your consent at any time by contacting [].</p>
+                    
+                    <h4>
+                      <br>
+                      <br>
+
+                    3.	Change of Purpose</h4>
+                     <br>
+
+                    <p>We will only use your personal information for the purposes for which we collected it. If we need to use your personal information for any other purpose, we will seek your consent to do so, we will not process your information for any other purpose if you refuse to consent. Where we have a legal basis for using your information for any other purpose, we will notify you and explain the legal basis which allows us to do so.</p>
+                    <br>
+                    <br>
+                    <h4>4.	Disclosure of Personal Information</h4>
+                    <br>
+                    <p>We strive to protect the privacy of your personal information at all times, we may, where the circumstance warrants, disclose your information for the purposes detailed below:
+                    a.	To satisfy any local, state, or Federal laws or regulations;
+                    b.	To respond to requests, such as discovery, criminal, civil, or administrative process, subpoenas, court orders, or writs from law enforcement or other governmental or legal bodies;
+                    c.	To bring legal action against a user or professional  who has violated the law or violated the Terms of our Platform; 
+                    d.	As may be necessary for the operation of our Platform;
+                    e.	To generally cooperate with any lawful investigation about Users or Professionals;
+                    f.	To our group companies, third-party service providers and agents in order to provide the products and services;
+                    g.	In the event that we sell or buy any business or assets, to the prospective seller or buyer of such business or assets;
+                    h.	if we are under a duty to disclose or share your personal data in order to comply with any legal obligation, or in order to enforce or apply our Terms and Conditions and other agreements; 
+                    i.	to protect the rights, property, or safety of Bloom Buddy Limited, other Users, Professionals or third parties enabling the provision of services on our Platform.  
+                    j.	If we suspect any fraudulent activity on our Platform or if we have noticed any activity which violates our terms or other applicable rules.</p>
+                    <br>
+                      <br>
+                    <h4>
+
+                    5.	Your Rights</h4>
+                    <br>
+                    
+                    <p>By providing us with your personal information, you are guaranteed the following rights by virtue of the Data Protection Regulation applicable in the Jurisdiction
+                    a.	Right to Rectification: you can at any time modify or change your name, email password and login PIN/password on your profile.
+                    b.	Right of Access, Right to Erasure, Right to Restrict Processing: you can request access, restriction on further processing or erasure of your Personal Information on our Platform by contacting us. The request will be processed within 30 days. We reserve the right to charge a reasonable fee to process excessive or repeat requests.
+                    c.	Right to Withdraw Consent: you can withdraw consent to receiving our promotional emails by following the unsubscribe instructions included in every email we send. You can also withdraw your consent to our use or processing of your data if you cease to use the Platform.
+                    You will not have to pay a fee to access your personal information (or to exercise any of the other rights above). However, we may charge a reasonable fee if your access request is repetitive, excessive, or unfounded. Alternatively, we may refuse to comply with the request in such circumstances.
+                    We may need to request specific information from you to help us confirm your identity and ensure your right to access the information (or to exercise any of your other rights). This is another appropriate security measure to ensure that personal information is not disclosed to any person who has no right to receive it.</p>
+                    <br>
+                    <br>
+                    <h4>6.	Child Data</h4>
+                    <br>
+                      
+                    <p>Children under the age of 13 may require certain Services based on their healthcare requirements. parents/caretakers are encouraged to provide personal information on behalf of their child. A child may also provide personal information with the consent of their parents/caretakers. 
+
+                    If we become aware that we have collected personal information from a child under the age of 13 without verification of parental consent, we will take steps to remove that information from our servers. </p>
+                    <h4>
+                      <br>
+                      <br>
+                    7.	Parental/Caretakers Consent</h4>
+                    <br>
+                    
+                    <p>Where we collect personal or sensitive information from a child, we are required by the NDPR to seek consent to process such data. We will seek consent from the parents or caretakers by email. In the email, we will explain what information we are collecting, how we plan to use it, how the parent/caretaker can provide or revoke consent, and how the parent/caretaker can withdraw consent. If we do not receive parental/caretakers’ consent within a reasonable time, we will delete the parents/caretaker contact information and any other information collected from the child in connection with that activity.</p>
+                    <h4>
+                    </h4>
+                    <br>
+                      <br>
+                      <h4>8.	Protecting Your Information</h4>
+                      <br>
+                    <p>Your data is secured by encryption, firewalls, and Secure Socket Layer (SSL) technology.  This is industry standard encryption technology which manages the security of messages transmitted across the internet.  When we receive your data, we store it on secure servers, which can only be accessed by us. Although we take great effort to protect the data we collect, we cannot guarantee, and you cannot reasonably expect that our databases will be immune to all wrongdoings, malfunctions, unlawful interceptions or access, or other kinds of abuse and misuse. Use of the Platform is at your sole risk and discretion. 
+                    Further, A password is used to help protect user accounts and account information. It is your responsibility to keep the password confidential, we are not liable to, nor can we fully control the actions of other users with whom you may choose to share your information.
+                    Please be advised that our third-party data host provider uses servers located in the cloud to store personal data. As a result, when you use the Platform, your personal information (such as your name, e-mail address, and phone numbers) will be transferred to the data processing centre which is located [].
+                    However, we have entered into agreements with any third party or group company in order to safeguard personal data which is processed or stored outside Nigeria.
+                    We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this policy when it is transferred, stored, or processed in this way.</p>
+                    <p>
+                    </p>
+                    <br>
+                      <br>
+                      
+                    <h4>9.	International Data Transfer</h4>
+                      <br>
+                      
+                    <p>We have established the Platform with the aim of having a global reach. Hence, to provide you with the most suitable service for your needs we may collect and transfer your personal information to locations outside your country. Where we transfer your personal information outside your country, we will ensure that it is protected and transferred in a manner consistent with legal requirements.</p>
+                    <br>
+                    <br>
+                    <h4>10.	Retention of Your Data</h4>
+                    <br>
+                    <p>We will only keep your personal information for as long as is reasonably required for the purpose(s) for which it was collected, as set out above in this policy and for legal purposes.</p>
+                    <br>
+                    <br>
+                    <h4>11.	Modifications And Revisions</h4>
+                    <br>
+                    <p>We reserve the right to modify, revise, or otherwise amend this Privacy Policy at any time and in any manner. Any changes we make to our policy will be put on the Platform and where appropriate, notified to you by e-mail.  Please check for updates from time to time. Failure to notify you of such change will however not constitute a breach of this policy to the extent that same is available on the Platform.</p>
+                    <br>
+                    <br>
+                    <h4>12.	Contact Us</h4>
+                    <br>
+                    
+                    <p>If you have any questions about this Privacy Policy or the way we collect information from you, or if you would like to launch a complaint about anything related to this Privacy Policy, you may contact us or the Data Protection Officer at the following email address: suuport@thebloombuddy.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="mchat-instructions-page-container3">
+              <!-- <a href="index.html" class="mchat-instructions-page-navlink">
+                <div class="mchat-button-container">Previous</div>
+              </a> -->
+              {% comment %} <div class="mchat-button-container"> {% endcomment %}
+                
+                  
+                    <a href="mchat-intro-page.html" class="mchat-button-navlink">
+                      <span>Previous</span>
+                    </a>
+                  
+                  {% comment %} <a
+                  href="/registerPage"
+                  class="mchat-instructions-page-navlink1"
+                > </a>               {% endcomment %}
+                  <a href="/registerPage/">
+                    <button class="mchat-button-navlink" type="submit">
+                      <span>Next</span>
+                    </button>
+                  </a>
+              </div>
+              <div class="copyright">
+                <span class="mchat-instructions-page-text11">
+                  © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
+                </span>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-      <span class="#">
-        © 2009 Diana Robins, Deborah Fein &amp; Marianne Barton
-      </span>
+      </div>
+      
     </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
   </body>
 </html>

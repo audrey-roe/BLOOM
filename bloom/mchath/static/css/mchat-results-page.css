@@ -353,9 +353,21 @@
 }
 .mchat-results-page-text43 {
   font-size: 0.7rem;
+  margin-top: var(--dl-space-space-twounits);
   align-self: center;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.15;
+  color: var(--dl-color-gray-black);
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  font-size: 0.7rem;
   margin-top: var(--dl-space-space-twounits);
   margin-bottom: var(--dl-space-space-twounits);
+  width: 100%;
 }
 @media(max-width: 641px) {
   .mchat-results-page-text06 {
@@ -387,4 +399,11 @@
   .mchat-results-page-text43 {
     font-size: 0.5rem;
   }
+}
+.result {
+  display: none;
+}
+
+.active {
+  display: flex;
 }
