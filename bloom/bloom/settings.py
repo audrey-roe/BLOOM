@@ -21,21 +21,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-zl2g#a_4wqo%1xua&zq)o-s#n$y6w9fdfou5pd%^bf6@ik)g4-'
+SECRET_KEY = 'jy5y65y&*^&%^*(IUYHF8yh//**JONierijkxkwokijfkwk99@@3kj1jaOKIKIOLAISTHEBEST AUDREYCOMEAFTERHIMbdj\][][..>></,1!``+--/dd;oimkj rf0d9ok3eikomrefoplr)(*@(*#(+-`@@iej2jjeir9u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# # SECURE_SSL_REDIRECT setting
-# SECURE_SSL_REDIRECT = True
+#  SECURE_SSL_REDIRECT setting
+SECURE_SSL_REDIRECT = True
 
 # # secure cooking setting
-# SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 # # crsf secure
-# CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mchat.thebloombuddy.com']
 
 
 # Application definition
@@ -47,10 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'crispy_forms',
     'mchath',
-    'bbchatbot',
-    'pandas',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +65,7 @@ ROOT_URLCONF = 'bloom.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates/'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,12 +84,32 @@ WSGI_APPLICATION = 'bloom.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'bloombudm',
+#        'USER': 'bloom',
+#        'PASSWORD': 'bloom_pass',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#        'CONN_MAX_AGE': 500,
+#    }
+#}
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'kzxazzjpeq',
+        'USER': 'kzxazzjpeq',
+        'PASSWORD': 'pX74hWMCQb',
+        'HOST': '178.62.25.27',
+        'PORT': '3306',
+        'CONN_MAX_AGE': 500,
     }
 }
+
 
 
 # Password validation
@@ -129,8 +146,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-
-
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
@@ -141,3 +156,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+#EMAIL_HOST = 'smtp.elasticemail.com'
+#EMAIL_PORT = 465
+#EMAIL_HOST_USER = 'support@thebloombuddy.com'
+#EMAIL_HOST_PASSWORD = 'Skycaptain1979#'
+#EMAIL_USE_SSL = True
