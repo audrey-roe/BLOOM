@@ -1,45 +1,44 @@
 # Create your views here.
-import os 
+import os
 from django.shortcuts import redirect,render
 from django.core.paginator import Paginator
-# from django.contrib.auth import login,logout,authenticate
-# from .forms import createcustomerform, quizform
 from .models import quiz, customer
 from django.core.paginator import Paginator , EmptyPage, PageNotAnInteger
-from .utils import render_to_pdf
 
 
 
 # Create your views here.
 
 def registerPage(request):
-    if request.method == 'POST':     
+    if request.method == 'POST':
         if customer.objects.filter(caregiver_email='caregiver_email').exists():
             return redirect (quizz)
         else:
-            customer.objects.create(
+            cust = customer.objects.create(
                     caregiver_name = request.POST['caregiver_name'],
                     child_age = request.POST['child_age'].replace(' Months',''),
                     child_name = request.POST['child_name'],
-                    relation_to_child = request.POST['relation_to_child'], 
+                    relation_to_child = request.POST['relation_to_child'],
                     caregiver_email = request.POST['caregiver_email'],
                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
                     date = request.POST['date1'],)
+            request.session['user'] = cust.id
+            request.session['registered'] = True
 
             return redirect(quizz)
     else:
         return render(request, 'info-form-page.html')
 
 # def registerPage(request):
-#     if request.method == 'POST':     
+#     if request.method == 'POST':
 #         if customer.objects.filter(caregiver_email='caregiver_email').exists():
 #             return redirect (quizz)
 #         else:
 #             customer.objects.create(
 #                     caregiver_name = request.POST['caregiver_name'],
 #                     child_age = request.POST['child_age'].replace(' Months',''),
-#                     child_name = request.POST['child_name'], 
-#                     relation_to_child = request.POST['relation_to_child'], 
+#                     child_name = request.POST['child_name'],
+#                     relation_to_child = request.POST['relation_to_child'],
 #                     caregiver_email = request.POST['caregiver_email'],
 #                     caregiver_phone = int(f"234{(request.POST['phone'].replace('+','')).replace('234234','').replace('234','')}"),
 #                     date = request.POST['date1'],)
@@ -56,59 +55,66 @@ def instruction(request):
     return render(request, 'mchat-instructions-page.html')
 
 def quizz(request):
-    if request.method == 'POST':
-        for questions in request.POST:
-            request.session[questions] = request.POST[questions]
+    if request.session.get('registered'):
+        if request.method == 'POST':
+            for questions in request.POST:
+                request.session[questions] = request.POST[questions]
 
-        print(request.POST)
+            print(request.POST)
 
 
-        questions=quiz.objects.all()
-        score = 23
-        # wrong=0
-        correct=0
-        total=0
-        for q in questions:
-            total+=1
-            print(request.POST.get(q.question))
-            print(q.ans)
-            print()
-            if q.ans ==  request.session.get(q.question):
-                score-=1
-                correct+=1
+            questions=quiz.objects.all()
+            score = 23
+            # wrong=0
+            correct=0
+            total=0
+            for q in questions:
+                total+=1
+                print(request.POST.get(q.question))
+                print(q.ans)
+                print()
+                if q.ans ==  request.session.get(q.question):
+                    score-=1
+                    correct+=1
 
-        context = {
-            'total':total,
-            'score': score
-        }      
-        print(context)
-        
+            fil = customer.objects.get(id = request.session.get('user'))
+            fil.score = score
+            fil.save()
 
-        return render(request, 'mchat-results-page.html', context)
-    else:
-        questions=quiz.objects.all()
+            context = {
+                'total':total,
+                'score': score
+            }
+            print(context)
+            
 
-    p = Paginator(questions, 4) # 4 questions per page this determines how many objects will be displayed per page
-    page_num = request.GET.get('page', 1) # allows you to access pages by passing value directly  through link
-    page = p.page(page_num)
+            return render(request, 'mchat-results-page.html', context)
+        else:
+            questions=quiz.objects.all()
 
-    try:
+        p = Paginator(questions, 4) # 4 questions per page this determines how many objects will be displayed per page
+        page_num = request.GET.get('page', 1) # allows you to access pages by passing value directly  through link
         page = p.page(page_num)
-    except PageNotAnInteger:
-        # if page is not an integer, deliver the first page
-        page = Paginator.page(1)
-    except EmptyPage:
-        # if the page is out of range, deliver the last page
-        page = p.page(1)
-    
-    
-    context = { 
-        'questions':page 
-    
-        # 'questions':questions
-    }
-    
-    return render(request, 'mchat-survey-page.html', context)
+
+        try:
+            page = p.page(page_num)
+        except PageNotAnInteger:
+            # if page is not an integer, deliver the first page
+            page = Paginator.page(1)
+        except EmptyPage:
+            # if the page is out of range, deliver the last page
+            page = p.page(1)
+        
+        
+        context = {
+            'questions':page
+        
+            # 'questions':questions
+        }
+        
+        return render(request, 'mchat-survey-page.html', context)
+    else:
+        return redirect('/register_page')
 
 def result(request):
     return render(request, 'mchat-results-page.html', )
@@ -145,16 +151,25 @@ def next(request):
 #     response['Content-Disposition'] = 'attachment; filename=%s' % 'faults.pdf'
 #     return response
 
-import mimetypes
 # import os module
 import os
 # Import HttpResponse module
 from django.http.response import HttpResponse
 # Import render module
 from django.shortcuts import render
-from pathlib import Path
-import pandas as pd
-from django.core.mail import send_mail
+import requests
+
+def send_mail(subject, body, sender, receiver):
+    soe = requests.request('GET', 'https://api.elasticemail.com/v2/email/send', params={
+        'apikey' : 'B37399862D9CAD0765815303D1F96F149FA998E11CED0192DA88478024051B0FF911D726AB864E8ECF02D6A1B6E31F8F',
+        'bodyText' : body,
+        'from' : sender,
+        'sender' : sender,
+        'subject' : subject,
+        'fromName' : sender,
+        'msgTo' : receiver[0]
+    })
+    return soe
 
 
 
@@ -163,16 +178,13 @@ def download_file_low(request):
     file_name = 'low_risk_result.pdf'
     filepath = BASE_DIR + '/mchath/Files/' + file_name
     file = open(filepath.format(file_name), 'rb')
+    resp = send_mail(
+    'M-CHAT-R-F™️ Screening results',# 'Subject here',
+    'Your child’s M-CHT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
+    'support@thebloombuddy.com',[customer.objects.get(id = request.session.get('user')).caregiver_email],
+)
     response = HttpResponse(file, content_type='application/pdf')
-    response['Content-Disposition'] = "attachment; filename={}".format(file_name)
-#     send_mail(
-#     'M-CHAT-R-F™️ Screening results',# 'Subject here',
-#     'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
-#     # 'from@example.com',
-#     customer.caregiver_email, # ['to@example.com'],
-#     fail_silently=False,
-# )
-
+    #response['Content-Disposition'] = "attachment; filename={}".format(file_name)
     return response
 
 
@@ -181,15 +193,15 @@ def download_file_mid(request):
     file_name = 'medium_risk_result.pdf'
     filepath = BASE_DIR + '/mchath/Files/' + file_name
     file = open(filepath.format(file_name), 'rb')
+    resp = send_mail(
+    'M-CHAT-R-F™️ Screening results',
+    'Your child’s M-CHAT-R-F™️ score indicates a medium risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',
+    'support@thebloombuddy.com',[customer.objects.get(id = request.session.get('user')).caregiver_email],
+)
+
     response = HttpResponse(file, content_type='application/pdf')
-    response['Content-Disposition'] = "attachment; filename={}".format(file_name)
-#     send_mail(
-#     'M-CHAT-R-F™️ Screening results',# 'Subject here',
-#     'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
-#     # 'from@example.com',
-#     customer.caregiver_email, # ['to@example.com'],
-#     fail_silently=False,
-# )
+    #response['Content-Disposition'] = "attachment; filename={}".format(file_name)
+    return response
 
     return response
 
@@ -200,12 +212,11 @@ def download_file_hi(request):
     file = open(filepath.format(file_name), 'rb')
     response = HttpResponse(file, content_type='application/pdf')
     response['Content-Disposition'] = "attachment; filename={}".format(file_name)
-#     send_mail(
-#     'M-CHAT-R-F™️ Screening results',# 'Subject here',
-#     'Your child’s M-CHAT-R-F™️ score indicates a low risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',# 'Here is the message.',
-#     # 'from@example.com',
-#     customer.caregiver_email, # ['to@example.com'],
-#     fail_silently=False,
-# )
+    send_mail(
+     'M-CHAT-R-F™️ Screening results',
+     'Your child’s M-CHAT-R-F™️ score indicates a high risk for Autism Spectrum Disorder. If your child is younger than 24 months, screen again after second birthday or at future well-child visits. No further action required unless surveillance indicates risk for ASD.',
+    'support@thebloombuddy.com',
+     [customer.objects.get(id = request.session.get('user')).caregiver_email],
+ )
 
     return response
